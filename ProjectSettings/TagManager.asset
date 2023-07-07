@@ -7,6 +7,7 @@ TagManager:
   - EnemyBar
   - EnemyBall
   - DefaultBounce
+  - ReverseBrick
   layers:
   - Default
   - TransparentFX

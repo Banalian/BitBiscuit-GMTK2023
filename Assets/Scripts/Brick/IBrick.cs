@@ -15,7 +15,7 @@ namespace Brick {
         /// <summary>
         /// What to do when the brick takes a hit
         /// </summary>
-        void Hit(GameObject pad, int damage);
+        void Hit(GameObject ball, int damage);
 
         /// <summary>
         /// What to do when the brick is destroyed.

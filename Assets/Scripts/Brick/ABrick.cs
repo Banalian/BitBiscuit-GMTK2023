@@ -47,7 +47,7 @@ namespace Brick
             _healthManager.OnDeathEvent += OnDeath;
         }
         
-        public void Hit(GameObject pad, int damage)
+        public virtual void Hit(GameObject ball, int damage)
         {
             OnBrickDamaged?.Invoke(gameObject, damage);
             

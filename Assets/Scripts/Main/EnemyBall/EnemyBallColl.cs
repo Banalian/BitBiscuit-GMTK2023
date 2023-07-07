@@ -24,12 +24,14 @@ public class EnemyBallColl : MonoBehaviour
             case "EnemyBar":
                 TypeBar(ray, dis);
                 break;
+            case "ReverseBrick":
+                TypeReverse(ray, dis);
+                break;
             case "DefaultBounce":
                 TypeDefault(ray, dis);
                 break;
         }
     }
-
     //every function in this region is just the response to different objects.
     //types are fairly self explanatory from name alone.
     #region HitTypes
@@ -44,6 +46,16 @@ public class EnemyBallColl : MonoBehaviour
 
         bar.CollBarHit();
     }
+    
+    private void TypeReverse(RaycastHit2D ray, float dis)
+    {
+        rb.velocity = -rb.velocity;
+        rb.position = ray.point + rb.velocity.normalized * (dis - ray.distance);
+        Debug.DrawRay(ray.point, rb.position - ray.point, Color.red);
+
+        trail.SetPosition(trail.positionCount-1, ray.point);
+    }
+
 
     public void TypeDefault(RaycastHit2D ray, float dis)
     {
