@@ -68,7 +68,6 @@ public class ScoreTicker : MonoBehaviour
     /// </summary>
     void Tick()
     {
-        Debug.Log("score ticker has ticked");
         OnTickEvent?.Invoke();
         this.CurrentTick++;
         this.tickTimer = .0f;
