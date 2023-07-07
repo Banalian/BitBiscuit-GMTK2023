@@ -71,4 +71,21 @@ public class HealthManager : MonoBehaviour
             Reset();
         }
     }
+
+    /// <summary>
+    /// Increase the max health of the brick.
+    /// </summary>
+    /// <param name="fullHeal">if true, heal the brick back to full health</param>
+    public void IncreaseMaxHealth(bool fullHeal = false)
+    {
+        MaxHealth++;
+        if (fullHeal)
+        {
+            Reset();
+        }
+        else
+        {
+            Health++;
+        }
+    }
 }
