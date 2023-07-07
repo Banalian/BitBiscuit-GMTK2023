@@ -61,8 +61,6 @@ public class HealthManager : MonoBehaviour
     public void Reset()
     {
         Health = MaxHealth;
-        OnDamageTakenEvent = null;
-        OnDeathEvent = null;
     }
 
     public void SetParameters(int newMaxHealth, bool resetHealth = true)
