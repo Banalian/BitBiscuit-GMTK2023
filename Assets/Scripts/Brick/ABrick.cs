@@ -1,4 +1,5 @@
 ﻿using System;
+using Scoring;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -54,11 +55,15 @@ namespace Brick
             _healthManager.Damage(damage);
         }
 
-        public virtual void Destroy(bool manual = false)
+        public virtual void DestroyBrick(bool manual = false)
         {
             _healthManager.OnDeathEvent -= OnDeath;
             
             OnBrickDestroyed?.Invoke(gameObject, manual);
+            
+            ScoreManager.Instance.AddScore(ScoreValue);
+            
+            Destroy(gameObject);
         }
 
         public int GetScoreValue()
@@ -73,7 +78,7 @@ namespace Brick
         /// <param name="brick">The brick that died (here, ourself)</param>
         protected virtual void OnDeath(GameObject brick)
         {
-            Destroy();
+            DestroyBrick();
         }
 
 

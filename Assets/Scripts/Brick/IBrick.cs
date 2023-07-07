@@ -21,7 +21,7 @@ namespace Brick {
         /// What to do when the brick is destroyed.
         /// </summary>
         /// <param name="manual"> if true, means it's destroyed by the player (so for example we don't give points, etc</param>
-        void Destroy(bool manual = false);
+        void DestroyBrick(bool manual = false);
 
         /// <summary>
         /// Get the score value of the brick
