@@ -23,4 +23,24 @@ public class EnemyBarContr : MonoBehaviour
     {
 
     }
+
+    #region Modifiers
+
+    public float sizeDur = 3;
+    public float sizeWidth = 10;
+    public void ModSizeUp()
+    {
+        StartCoroutine(TimerSizeUp());
+    }
+
+    IEnumerator TimerSizeUp()
+    {
+
+
+        yield return new WaitForSeconds(sizeDur);
+
+
+    }
+
+    #endregion
 }
