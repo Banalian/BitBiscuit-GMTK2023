@@ -16,11 +16,6 @@ namespace Scoring
         // Event fired everytime the score changes, it contains the amount by which the score was changed.
         public UnityAction<int> OnScoreChangedEvent;
 
-        public ScoreManager(UnityAction<int> onScoreChangedEvent)
-        {
-            OnScoreChangedEvent = onScoreChangedEvent;
-        }
-
         private void Awake() 
         { 
             //If there is another scoreManager instance, and it's not me, delete myself.
