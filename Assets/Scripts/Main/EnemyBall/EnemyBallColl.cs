@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Brick;
 using UnityEngine;
 
 public class EnemyBallColl : MonoBehaviour
@@ -30,6 +31,14 @@ public class EnemyBallColl : MonoBehaviour
             case "DefaultBounce":
                 TypeDefault(ray, dis);
                 break;
+        }
+        
+        if (ray.collider.gameObject.layer == LayerMask.NameToLayer("Bricks"))
+        {
+            if (ray.collider.TryGetComponent(out IBrick brick))
+            {
+                brick.Hit(gameObject, 1);
+            }
         }
     }
     //every function in this region is just the response to different objects.
