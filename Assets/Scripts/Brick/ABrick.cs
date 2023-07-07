@@ -61,6 +61,11 @@ namespace Brick
             OnBrickDestroyed?.Invoke(gameObject, manual);
         }
 
+        public int GetScoreValue()
+        {
+            return ScoreValue;
+        }
+
         /// <summary>
         /// Callback used for when the brick gets damaged. In child classes, should usually not be extended.
         /// Instead, extend the Destroy method.
