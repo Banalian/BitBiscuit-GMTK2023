@@ -30,7 +30,13 @@ namespace Brick
         /// Score you gain when the brick is destroyed
         /// </summary>
         [field:SerializeField] 
-        public int ScoreValue { get; protected set; } = 1;
+        public int ScoreDestroyValue { get; protected set; } = 1;
+        
+        /// <summary>
+        /// Score you gain when the brick is hit
+        /// </summary>
+        [field:SerializeField] 
+        public int ScoreHitValue { get; protected set; } = 1;
 
         protected virtual void Awake()
         {
@@ -53,6 +59,12 @@ namespace Brick
             OnBrickDamaged?.Invoke(gameObject, damage);
             
             _healthManager.Damage(damage);
+            
+            ScoreManager.Instance?.AddScore(
+                _healthManager.Health >= _healthManager.Health? 
+                    this.ScoreDestroyValue :
+                    this.ScoreHitValue
+                ); 
         }
 
         public virtual void DestroyBrick(bool manual = false)
@@ -61,14 +73,12 @@ namespace Brick
             
             OnBrickDestroyed?.Invoke(gameObject, manual);
             
-            ScoreManager.Instance.AddScore(ScoreValue);
-            
             Destroy(gameObject);
         }
 
         public int GetScoreValue()
         {
-            return ScoreValue;
+            return ScoreDestroyValue;
         }
 
         /// <summary>
