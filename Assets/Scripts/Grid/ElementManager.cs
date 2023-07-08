@@ -91,11 +91,6 @@ namespace Grid
         {
             ReplaceElementWith(objToDel, defaultElement);
         }
-
-        public void SetSelected(GameObject newElement)
-        {
-            selectedElement = newElement;
-        }
     
         public void ResetSelected()
         {
