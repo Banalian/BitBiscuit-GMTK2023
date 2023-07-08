@@ -62,4 +62,6 @@ MonoBehaviour:
   brickSize: {x: 2, y: 0.6}
   spacing: {x: 0.3, y: 0.3}
   gridSize: {x: 7, y: 9}
+  corePosition: {x: 3, y: 3}
   buildingBlock: {fileID: 1418194497571715743, guid: 91af654f5a2e9174bacfd50b05dca311, type: 3}
+  core: {fileID: 80974491936278146, guid: a5d6400daea91e041839bfe8905f44dc, type: 3}
