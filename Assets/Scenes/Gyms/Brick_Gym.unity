@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2035897889466127959, guid: e61b1a6dff67ff540bec8ff286e8d936, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2035897889466127959, guid: e61b1a6dff67ff540bec8ff286e8d936, type: 3}
       propertyPath: m_LocalPosition.x
@@ -428,6 +428,76 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba9d4222f1d4b894a83e98262ffbce7d, type: 3}
+--- !u!1 &1049361685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049361687}
+  - component: {fileID: 1049361686}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1049361686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049361685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee46bdc2eb2a7f44a9abc13f3a784245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PaddleHit
+    clip: {fileID: 8300000, guid: ed9bd80b9f704364ba2072e6410bfe99, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BrickDamage
+    clip: {fileID: 8300000, guid: 25c0cba2c4dc30e4abfaaeb257457dec, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BrickBreak
+    clip: {fileID: 8300000, guid: 4d4d299a9abfede419924141e5141239, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BoomBox
+    clip: {fileID: 8300000, guid: 223f6d70ed9ddf744a7dbfed45f4648b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  <globalVolume>k__BackingField: 1
+--- !u!4 &1049361687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049361685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1485678, y: -1.0024774, z: -0.035989657}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1110976863
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +955,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shockwave Brick
       objectReference: {fileID: 0}
+    - target: {fileID: 4688149130523273266, guid: 8b87551143e3dad479defaf3048e3935, type: 3}
+      propertyPath: cooldown
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6053707148003997368, guid: 8b87551143e3dad479defaf3048e3935, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1025,7 +1099,7 @@ Transform:
   m_Children:
   - {fileID: 1223563759}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1992370020
 GameObject:

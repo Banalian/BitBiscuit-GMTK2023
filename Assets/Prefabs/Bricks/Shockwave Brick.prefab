@@ -51,9 +51,10 @@ MonoBehaviour:
   <ScoreDestroyValue>k__BackingField: 1
   <ScoreHitValue>k__BackingField: 1
   range: 2
-  force: -0.5
-  duration: 5
+  force: -1
+  duration: 1
   cooldown: 2
+  activationSound: 0
 --- !u!114 &7145353612386013757
 MonoBehaviour:
   m_ObjectHideFlags: 0

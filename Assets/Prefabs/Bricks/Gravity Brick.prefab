@@ -138,6 +138,7 @@ MonoBehaviour:
   force: 0.5
   duration: 5
   cooldown: 2
+  activationSound: 3
 --- !u!114 &8953295779694297200
 MonoBehaviour:
   m_ObjectHideFlags: 0

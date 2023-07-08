@@ -1,4 +1,5 @@
 using System.Collections;
+using Audio;
 using UnityEngine;
 
 namespace Brick
@@ -31,6 +32,12 @@ namespace Brick
         [SerializeField]
         protected float cooldown = 2;
 
+        /// <summary>
+        /// Sound to play when the brick is activated
+        /// </summary>
+        [SerializeField] 
+        private SoundBank activationSound;
+
         public bool IsActivated { get; protected set; } = false;
         
         private Coroutine _activationCoroutine;
@@ -53,10 +60,10 @@ namespace Brick
         {
             while (true)
             {
-                Activate();
-                yield return new WaitForSeconds(duration);
                 Deactivate();
                 yield return new WaitForSeconds(cooldown);
+                Activate();
+                yield return new WaitForSeconds(duration);
             }
         }
 
@@ -74,6 +81,7 @@ namespace Brick
         private void Activate()
         {
             IsActivated = true;
+            AudioManager.Instance.Play(activationSound);
         }
         
         private void Deactivate()

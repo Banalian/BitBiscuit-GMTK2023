@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 
 public class EnemyBarContr : MonoBehaviour
@@ -21,6 +22,7 @@ public class EnemyBarContr : MonoBehaviour
 
     public void CollBarHit()
     {
-
+        // feel free to move this elsewhere to make it cleaner if you want to
+        AudioManager.Instance?.Play(SoundBank.PaddleHit);
     }
 }

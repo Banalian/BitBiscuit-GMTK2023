@@ -1,4 +1,5 @@
 ﻿using System;
+using Audio;
 using Scoring;
 using UnityEngine;
 using UnityEngine.Events;
@@ -64,7 +65,9 @@ namespace Brick
                 damage >= _healthManager.Health? 
                     this.ScoreDestroyValue :
                     this.ScoreHitValue
-                ); 
+                );
+            
+            AudioManager.Instance.Play(SoundBank.BrickDamage);
         }
 
         public virtual void DestroyBrick(bool manual = false)
@@ -72,7 +75,9 @@ namespace Brick
             _healthManager.OnDeathEvent -= OnDeath;
             
             OnBrickDestroyed?.Invoke(gameObject, manual);
-            
+
+            AudioManager.Instance.Play(SoundBank.BrickBreak);
+
             Destroy(gameObject);
         }
 
