@@ -44,7 +44,16 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.PlayOneShot(s.source.clip);
+
+        if (s.loop)
+        {
+            s.source.loop = true;
+            s.source.Play();
+        }
+        else
+        {
+            s.source.PlayOneShot(s.source.clip);
+        }
     }
 
     public void Play(SoundBank sound)
