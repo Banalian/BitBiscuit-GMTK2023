@@ -5,9 +5,15 @@ namespace Audio
 {
     public class PlayGameLoopOnStart : MonoBehaviour
     {
+        [SerializeField]
+        private string gameLoopName = "GameLoop";
+        
+        [SerializeField]
+        private float easeInTime = 3f;
+        
         private void Start()
         {
-            AudioManager.Instance.Play("GameLoop", 3f);
+            AudioManager.Instance.Play(gameLoopName, easeInTime);
         }
     }
 }

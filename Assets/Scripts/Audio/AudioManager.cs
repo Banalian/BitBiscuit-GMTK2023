@@ -13,6 +13,12 @@ public class AudioManager : MonoBehaviour
     [field:SerializeField]
     public float globalVolume { get; private set; } = 1f;
     
+    [field:SerializeField]
+    public float musicVolume { get; private set; } = 1f;
+    
+    [field:SerializeField]
+    public float soundVolume { get; private set; } = 1f;
+    
     void Awake()
     {
         if (Instance == null)
@@ -31,7 +37,7 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            s.source.volume = s.volume * globalVolume;
+            s.source.volume = s.volume * globalVolume * (s.name == "GameLoop" ? musicVolume : soundVolume);
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
@@ -105,6 +111,31 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds)
         {
             s.source.volume = s.volume * globalVolume;
+        }
+    }
+    
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = volume;
+        foreach (Sound s in sounds)
+        {
+            if (s.name == "GameLoop")
+            {
+                s.source.volume = s.volume * globalVolume * musicVolume;
+                break;
+            }
+        }
+    }
+    
+    public void SetSoundVolume(float volume)
+    {
+        soundVolume = volume;
+        foreach (Sound s in sounds)
+        {
+            if (s.name != "GameLoop")
+            {
+                s.source.volume = s.volume * globalVolume * soundVolume;
+            }
         }
     }
 }
