@@ -21,7 +21,7 @@ namespace Brick
         public float force;
         
         /// <summary>
-        /// Duration of the modifier when activated
+        /// Duration of the modifier when activated. put a negative value to never Deactivate
         /// </summary>
         [SerializeField]
         protected float duration = 1;
@@ -61,8 +61,20 @@ namespace Brick
             while (true)
             {
                 Deactivate();
-                yield return new WaitForSeconds(cooldown);
+                if (cooldown > 0f)
+                {
+                    yield return new WaitForSeconds(cooldown);
+                }
                 Activate();
+                if (duration < 0f)
+                {
+                    // we're doing a while loop, as we need the coroutine to keep running to not
+                    // have a null coroutine.
+                    while (true)
+                    {
+                        yield return new WaitForSeconds(1);
+                    }
+                }
                 yield return new WaitForSeconds(duration);
             }
         }

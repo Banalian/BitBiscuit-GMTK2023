@@ -53,8 +53,8 @@ MonoBehaviour:
   range: 2
   force: -1
   duration: 1
-  cooldown: 2
-  activationSound: 0
+  cooldown: 4
+  activationSound: 1
 --- !u!114 &7145353612386013757
 MonoBehaviour:
   m_ObjectHideFlags: 0

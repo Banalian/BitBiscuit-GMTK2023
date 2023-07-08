@@ -49,6 +49,8 @@ public class AudioManager : MonoBehaviour
 
     public void Play(SoundBank sound)
     {
+        if(sound == SoundBank.None) return;
+        
         Play(sound.ToString());
     }
 
