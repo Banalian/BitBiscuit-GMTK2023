@@ -47,17 +47,21 @@ namespace Grid
             UnHighLight();
         }
 
+        /// <summary>
+        /// Sets the highlights sprite as the current selected elements sprite
+        /// /// </summary>
         private void UpdateHighlight()
         {
             var sr = _highlightGO.GetComponent<SpriteRenderer>();
             sr.sprite = selectedElement.GetComponentInChildren<SpriteRenderer>().sprite;
             var tempColor = sr.color;
-            tempColor.a = .5f;
+            tempColor.a = .5f; //highlight is transparent
+            sr.sortingOrder = 1; //highlight is drawn on top of other sprites in the layer
             sr.color = tempColor;
         }
 
         /// <summary>
-        /// Function to set the selected element (element that is supposed to be placed)
+        /// Sets the selected element (element that is supposed to be placed)
         /// </summary>
         public void SetSelectedElement(GameObject newSelection)
         {
