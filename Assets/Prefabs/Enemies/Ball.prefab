@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e729ad0d5cb6ca140b8d794917fe33b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSp: 6
+  ballSp: 8
   ballMinHeight: -5
   lastPos: {x: 0, y: 0}
 --- !u!114 &8525379906798022548

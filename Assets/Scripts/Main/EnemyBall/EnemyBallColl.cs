@@ -66,10 +66,10 @@ public class EnemyBallColl : MonoBehaviour
 
         bar.CollBarHit();
 
-        if (relay) return;
+        if (relay) { ball.DetBarLose(); return; }
 
         relay = true;
-        trail.AddPosition(rb.position);
+        trail.SetPosition(trail.positionCount - 1, rb.position);
         ball.DetLastRay();
     }
     
@@ -80,10 +80,10 @@ public class EnemyBallColl : MonoBehaviour
         ball.lastPos = ray.point + ray.normal * .01f;
         Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
 
-        if (relay) return;
+        if (relay) { ball.DetBarLose(); return; }
 
         relay = true;
-        trail.AddPosition(rb.position);
+        trail.SetPosition(trail.positionCount - 1, rb.position);
         ball.DetLastRay();
     }
 
@@ -95,10 +95,10 @@ public class EnemyBallColl : MonoBehaviour
         ball.lastPos = ray.point + ray.normal * .01f;
         Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
 
-        if (relay) return;
+        if (relay) { ball.DetBarLose(); return; }
 
         relay = true;
-        trail.AddPosition(rb.position);
+        trail.SetPosition(trail.positionCount - 1, rb.position);
         ball.DetLastRay();
     }
 
