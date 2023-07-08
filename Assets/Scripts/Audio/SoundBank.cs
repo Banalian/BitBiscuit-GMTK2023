@@ -9,6 +9,9 @@ namespace Audio
         BoomBox,
         BrickDamage,
         BrickBreak,
-        PaddleHit
+        PaddleHit,
+        Upgrade,
+        ShopBuy,
+        MenuClick
     }
 }

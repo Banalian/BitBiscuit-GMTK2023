@@ -16,10 +16,10 @@ namespace Brick
         
         /// <summary>
         /// Event fired when the brick takes damage
-        /// The GameObject is a reference to the brick, and the int represents the damage taken.
+        /// The GameObject is a reference to the brick, and the int represents the damage taken and the new health
         /// This is fired before the health manager updates.
         /// </summary>
-        public event UnityAction<GameObject, int> OnBrickDamaged;
+        public event UnityAction<GameObject, int, int> OnBrickDamaged;
         
         /// <summary>
         /// Event fired when the brick is destroyed.
@@ -31,7 +31,7 @@ namespace Brick
         /// Event fired when the brick successfully gets a level up.
         /// The GameObject is a reference to the brick, and the int represents the new level
         /// </summary>
-        public event UnityAction<GameObject, int> OnBrickLevelUp;
+        public event UnityAction<GameObject, int> OnBrickLevelChanged;
 
         /// <summary>
         /// Score you gain when the brick is destroyed
@@ -76,7 +76,7 @@ namespace Brick
         
         public virtual void Hit(GameObject ball, int damage)
         {
-            OnBrickDamaged?.Invoke(gameObject, damage);
+            OnBrickDamaged?.Invoke(gameObject, damage, _healthManager.Health - damage);
             
             _healthManager.Damage(damage);
             
@@ -144,6 +144,10 @@ namespace Brick
             return CurrentLevel < MaximumLevel;
         }
 
+        /// <summary>
+        /// Try to level up the brick
+        /// </summary>
+        /// <returns>true if it succeeded, false otherwise</returns>
         public bool LevelUp()
         {
             if (!CanLevelUp())
@@ -158,8 +162,10 @@ namespace Brick
             {
                 boostable.Boost();
             }
+            
+            AudioManager.Instance.Play(SoundBank.Upgrade);
 
-            OnBrickLevelUp?.Invoke(gameObject, CurrentLevel);
+            OnBrickLevelChanged?.Invoke(gameObject, CurrentLevel);
 
             return true;
         }
