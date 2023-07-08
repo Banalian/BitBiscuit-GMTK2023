@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4652700693897862485}
   - component: {fileID: -4185169664995602106}
   - component: {fileID: 4255545942556839460}
+  - component: {fileID: 424144912590668393}
   m_Layer: 7
   m_Name: Gold Brick
   m_TagString: DefaultBounce
@@ -124,6 +125,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &424144912590668393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431349534084119225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7af389449a6e346ab558ca764e0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9174016774812387783
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Grid
 {
-    public class Replaceable : MonoBehaviour
+    public class Replaceable : Highlightable
     {
         private void OnMouseUpAsButton()
         {

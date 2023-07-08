@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4398980404285364300}
   - component: {fileID: 8953295779694297200}
   - component: {fileID: 98760020529489556}
+  - component: {fileID: 7345062659938494908}
   m_Layer: 7
   m_Name: Gravity Brick
   m_TagString: DefaultBounce
@@ -200,3 +201,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &7345062659938494908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049515572627373457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7af389449a6e346ab558ca764e0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
