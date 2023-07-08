@@ -438,10 +438,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5197611227326339330, guid: ed5f2d54fa36ef942bef09ef93cb1564, type: 3}
-      propertyPath: defaultBrick
-      value: 
-      objectReference: {fileID: 1418194497571715743, guid: 91af654f5a2e9174bacfd50b05dca311, type: 3}
     - target: {fileID: 5348256910892814380, guid: ed5f2d54fa36ef942bef09ef93cb1564, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
