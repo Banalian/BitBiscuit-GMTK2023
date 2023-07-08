@@ -58,10 +58,12 @@ namespace Main.EnemyBall
             foreach (BallTrajModifierBrick trajModifierBrick in trajModifierBricks)
             {
                 // if we're in range of a traj modifier zone, add it to the list to modify the ball's trajectory
-                if (trajModifierBrick.IsInRange(transform.position) && trajModifierBrick.IsActivated)
-                {
-                    trajModifierBricksInRange.Add(trajModifierBrick);
-                }
+                if (!trajModifierBrick.IsInRange(transform.position)) continue;
+                trajModifierBrick.TryActivate();
+                
+                if (!trajModifierBrick.IsActivated) continue;
+                trajModifierBricksInRange.Add(trajModifierBrick);
+                
             }
             
             return trajModifierBricksInRange;

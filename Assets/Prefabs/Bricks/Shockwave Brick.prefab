@@ -57,6 +57,7 @@ MonoBehaviour:
   duration: 1
   cooldown: 4
   activationSound: 1
+  ActivateWhenPlayerIsClose: 1
 --- !u!114 &7145353612386013757
 MonoBehaviour:
   m_ObjectHideFlags: 0
