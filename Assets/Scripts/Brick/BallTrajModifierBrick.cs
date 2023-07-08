@@ -1,6 +1,7 @@
 using System.Collections;
 using Audio;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Brick
 {
@@ -12,8 +13,8 @@ namespace Brick
         /// <summary>
         /// Range of the modifier (bigger = can influence from further away)
         /// </summary>
-        [SerializeField] 
-        protected float range = 1;
+        [field:SerializeField] 
+        public float Range { get; protected set; }= 1;
 
         /// <summary>
         /// Force to apply to the ball each fixed update when it's in range
@@ -45,8 +46,15 @@ namespace Brick
         private bool ActivateWhenPlayerIsClose = false;
 
         public bool IsActivated { get; protected set; } = false;
+        
+        public bool IsInCooldown { get; protected set; } = false;
 
         private Coroutine _activationCoroutine;
+
+        /// <summary>
+        /// Event fired when the modifier is activated. the int is the duration of the modifier
+        /// </summary>
+        public event UnityAction<float> OnActivated;
 
         public override void Initialize()
         {
@@ -64,6 +72,7 @@ namespace Brick
                 StopCoroutine(_activationCoroutine);
             }
             Deactivate();
+            IsInCooldown = false;
             base.DestroyBrick(manual);
         }
 
@@ -83,6 +92,7 @@ namespace Brick
             yield return new WaitForSeconds(duration);
             Deactivate();
             yield return new WaitForSeconds(cooldown);
+            IsInCooldown = false;
         }
 
 
@@ -93,18 +103,20 @@ namespace Brick
         /// <returns>true if it's in range, false otherwise</returns>
         public bool IsInRange(Vector3 transformPosition)
         {
-            return Vector2.Distance(transform.position, transformPosition) <= range;
+            return Vector2.Distance(transform.position, transformPosition) <= Range;
         }
 
         private void Activate()
         {
             IsActivated = true;
+            OnActivated?.Invoke(duration);
             AudioManager.Instance.Play(activationSound);
         }
 
         private void Deactivate()
         {
             IsActivated = false;
+            IsInCooldown = true;
         }
 
         public void ReduceCooldown(float reduction = 1f)
@@ -119,7 +131,7 @@ namespace Brick
         
         public void TryActivate()
         {
-            if (IsActivated)
+            if (IsActivated || IsInCooldown)
             {
                 return;
             }

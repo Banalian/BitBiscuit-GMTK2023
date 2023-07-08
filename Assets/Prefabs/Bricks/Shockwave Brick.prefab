@@ -52,7 +52,7 @@ MonoBehaviour:
   <ScoreHitValue>k__BackingField: 1
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
-  range: 2
+  <Range>k__BackingField: 2
   force: -1
   duration: 1
   cooldown: 4
@@ -139,6 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6827373938203620577}
   - component: {fileID: 2413174388912818898}
+  - component: {fileID: 157346276300619862}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -213,3 +214,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &157346276300619862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727543407050127308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77ddfce037640f0824bb61925ce0e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteToUse: {fileID: 21300000, guid: 7c96beeb303fea84ebddc48543d6324c, type: 3}
+  buildUpTimePercent: 0.1
+  fadeOutTimePercent: 0.33
+  stayAfterDuration: 0.5
