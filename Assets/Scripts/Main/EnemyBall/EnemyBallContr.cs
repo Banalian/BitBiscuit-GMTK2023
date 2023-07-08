@@ -16,6 +16,7 @@ public class EnemyBallContr : MonoBehaviour
     public Vector2 lastPos;
 
     RaycastHit2D rayBall;
+    RaycastHit2D rayPer;
     float rayDis;
 
     void Awake()
@@ -42,11 +43,24 @@ public class EnemyBallContr : MonoBehaviour
     public void DetRay()
     {
         rayDis = Mathf.Clamp(ballSp * Time.fixedDeltaTime, .25f, 100);
-        Vector2 nextPos = rb.velocity.normalized * rayDis;
-        rayBall = Physics2D.Raycast(rb.position, nextPos, rayDis);
-        Debug.DrawRay(rb.position, nextPos, Color.red);
+        Vector2 nextPos = rb.velocity.normalized;
 
-        if (rayBall) coll.CollHandle(rayBall, rayDis); else { coll.relay = false; }
+        rayBall = Physics2D.Raycast(rb.position, nextPos, rayDis);
+        Debug.DrawRay(rb.position, nextPos * rayDis, Color.red);
+
+        Vector2 perPos = Mathf.Sign(rb.velocity.x) * Mathf.Sign(rb.velocity.y) * -Vector2.Perpendicular(nextPos);
+        rayPer = Physics2D.Raycast(rb.position, perPos, .25f);
+        Debug.DrawRay(rb.position, perPos*.25f, Color.black);
+
+        if (rayBall) coll.CollHandle(rayBall, rayDis); else 
+        {
+            if (rayPer)
+            {
+                coll.CollHandle(rayPer, 0.25f);
+            }
+
+            coll.relay = false; 
+        }
     }
 
     public void DetLastRay()

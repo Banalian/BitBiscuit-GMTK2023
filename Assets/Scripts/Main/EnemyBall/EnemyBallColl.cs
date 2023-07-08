@@ -53,13 +53,16 @@ public class EnemyBallColl : MonoBehaviour
 
     public void TypeBar(RaycastHit2D ray, float dis)
     {
-        rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
+        /*rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
         Vector2 normDis = rb.velocity.normalized * (dis-ray.distance);
         rb.position = ray.point + normDis;
         ball.lastPos = ray.point + normDis * .01f;
-        Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
+        Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);*/
 
-        trail.SetPosition(trail.positionCount-1, ray.point);
+        rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
+        rb.position = ray.point + ray.normal * .25f;
+        ball.lastPos = ray.point + ray.normal * .01f;
+        Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
 
         bar.CollBarHit();
 
@@ -73,14 +76,14 @@ public class EnemyBallColl : MonoBehaviour
     private void TypeReverse(RaycastHit2D ray, float dis)
     {
         rb.velocity = -rb.velocity;
-        rb.position = ray.point + rb.velocity.normalized * (dis - ray.distance);
+        rb.position = ray.point + ray.normal * .25f;
+        ball.lastPos = ray.point + ray.normal * .01f;
         Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
-
-        trail.SetPosition(trail.positionCount-1, ray.point);
 
         if (relay) return;
 
         relay = true;
+        trail.AddPosition(rb.position);
         ball.DetLastRay();
     }
 
@@ -88,13 +91,10 @@ public class EnemyBallColl : MonoBehaviour
     public void TypeDefault(RaycastHit2D ray, float dis)
     {
         rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
-        Vector2 normDis = rb.velocity.normalized * (dis-ray.distance);
-        rb.position = ray.point + normDis;
-        ball.lastPos = ray.point + normDis * .01f;
+        rb.position = ray.point + ray.normal * .25f;
+        ball.lastPos = ray.point + ray.normal * .01f;
         Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
 
-        trail.SetPosition(trail.positionCount-1, ray.point);
-        
         if (relay) return;
 
         relay = true;
