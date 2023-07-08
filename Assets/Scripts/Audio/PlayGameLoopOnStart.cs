@@ -7,7 +7,7 @@ namespace Audio
     {
         private void Start()
         {
-            AudioManager.Instance.Play("GameLoop");
+            AudioManager.Instance.Play("GameLoop", 3f);
         }
     }
 }

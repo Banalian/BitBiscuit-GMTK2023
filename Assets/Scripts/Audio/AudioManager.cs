@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Audio;
 using UnityEngine;
 
@@ -36,7 +37,12 @@ public class AudioManager : MonoBehaviour
         }
     }
     
-    public void Play(string soundName)
+    /// <summary>
+    /// Play a given sound
+    /// </summary>
+    /// <param name="soundName">Name of the sound to play</param>
+    /// <param name="easeInTime">if above 0, take some time to easy in the sound</param>
+    public void Play(string soundName, float easeInTime = 0f)
     {
         Sound s = Array.Find(sounds, sound => sound.name == soundName);
         if (s == null)
@@ -52,7 +58,13 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            s.source.loop = false;
             s.source.PlayOneShot(s.source.clip);
+        }
+
+        if (easeInTime > 0f)
+        {
+            StartCoroutine(EaseInSoundCoroutine(soundName, easeInTime));
         }
     }
 
@@ -61,6 +73,30 @@ public class AudioManager : MonoBehaviour
         if(sound == SoundBank.None) return;
         
         Play(sound.ToString());
+    }
+    
+    /// <summary>
+    /// Coroutine to ease in the sound
+    /// </summary>
+    /// <param name="soundName">Name of the sound to ease in</param>
+    /// <param name="easeInTime">Time to spend easing in the sounds</param>
+    /// <returns>Coroutine stuff</returns>
+    private IEnumerator EaseInSoundCoroutine(string soundName, float easeInTime)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            yield break;
+        }
+        
+        float time = 0f;
+        while (time < easeInTime)
+        {
+            s.source.volume = Mathf.Lerp(0f, s.volume * globalVolume, time / easeInTime);
+            time += Time.deltaTime;
+            yield return null;
+        }
     }
 
     public void SetGlobalVolume(float volume)
