@@ -499,14 +499,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 957333857401975806, guid: 561107cdfd8dc0d49ada05b4b63fd124, type: 3}
-      propertyPath: launchStart.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 957333857401975806, guid: 561107cdfd8dc0d49ada05b4b63fd124, type: 3}
-      propertyPath: launchStart.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2356000735459338731, guid: 561107cdfd8dc0d49ada05b4b63fd124, type: 3}
       propertyPath: m_Name
       value: Ball
@@ -517,11 +509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645159524098010202, guid: 561107cdfd8dc0d49ada05b4b63fd124, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3645159524098010202, guid: 561107cdfd8dc0d49ada05b4b63fd124, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3645159524098010202, guid: 561107cdfd8dc0d49ada05b4b63fd124, type: 3}
       propertyPath: m_LocalPosition.z

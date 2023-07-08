@@ -12,11 +12,11 @@ public class EnemyBallContr : MonoBehaviour
 
     public float ballSp;
     public float ballMinHeight;
+    [HideInInspector]
     public Vector2 lastPos;
 
     RaycastHit2D rayBall;
     float rayDis;
-    public Vector2 launchStart;
 
     void Awake()
     {
@@ -26,8 +26,7 @@ public class EnemyBallContr : MonoBehaviour
         trail = transform.GetChild(0).GetComponent<TrailRenderer>();
 
         lastPos = rb.position;
-        //rb.velocity = new Vector2(Random.Range(0.2f, 1) * Mathf.Sign(rb.position.x), -1);
-        rb.velocity = launchStart;
+        rb.velocity = new Vector2(Random.Range(0.2f, 1) * Mathf.Sign(rb.position.x), -1);
     }
 
     void FixedUpdate()

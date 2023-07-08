@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballSp: 6
   ballMinHeight: -5
+  lastPos: {x: 0, y: 0}
 --- !u!114 &8525379906798022548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +217,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Time: 0.1
+  m_Time: 0.3
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -226,7 +227,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.2
+        value: 0.4
         inSlope: 0
         outSlope: 0
         tangentMode: 0
