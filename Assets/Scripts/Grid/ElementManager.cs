@@ -52,6 +52,8 @@ namespace Grid
         /// /// </summary>
         private void UpdateHighlight()
         {
+
+            _highlightGO.transform.localScale = selectedElement.transform.localScale;//make the highlight the size of the element
             var sr = _highlightGO.GetComponent<SpriteRenderer>();
             sr.sprite = selectedElement.GetComponentInChildren<SpriteRenderer>().sprite;
             var tempColor = sr.color;
