@@ -54,7 +54,9 @@ public class EnemyBallColl : MonoBehaviour
     public void TypeBar(RaycastHit2D ray, float dis)
     {
         rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
-        rb.position = ray.point + rb.velocity.normalized * (dis - ray.distance);
+        Vector2 normDis = rb.velocity.normalized * (dis-ray.distance);
+        rb.position = ray.point + normDis;
+        ball.lastPos = ray.point + normDis * .01f;
         Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
 
         trail.SetPosition(trail.positionCount-1, ray.point);
@@ -64,7 +66,8 @@ public class EnemyBallColl : MonoBehaviour
         if (relay) return;
 
         relay = true;
-        ball.DetRay();
+        trail.AddPosition(rb.position);
+        ball.DetLastRay();
     }
     
     private void TypeReverse(RaycastHit2D ray, float dis)
@@ -78,14 +81,16 @@ public class EnemyBallColl : MonoBehaviour
         if (relay) return;
 
         relay = true;
-        ball.DetRay();
+        ball.DetLastRay();
     }
 
 
     public void TypeDefault(RaycastHit2D ray, float dis)
     {
         rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
-        rb.position = ray.point + rb.velocity.normalized * (dis - ray.distance);
+        Vector2 normDis = rb.velocity.normalized * (dis-ray.distance);
+        rb.position = ray.point + normDis;
+        ball.lastPos = ray.point + normDis * .01f;
         Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
 
         trail.SetPosition(trail.positionCount-1, ray.point);
@@ -93,7 +98,8 @@ public class EnemyBallColl : MonoBehaviour
         if (relay) return;
 
         relay = true;
-        ball.DetRay();
+        trail.AddPosition(rb.position);
+        ball.DetLastRay();
     }
 
     #endregion

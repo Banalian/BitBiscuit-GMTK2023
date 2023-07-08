@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using Audio;
 using UnityEngine;
+using Audio;
 
 public class EnemyBarContr : MonoBehaviour
 {
     EnemyBallContr ball;
     public float sp;
     public float height;
+
+    public int TotalHits;
 
     void Awake()
     {
@@ -22,6 +24,8 @@ public class EnemyBarContr : MonoBehaviour
 
     public void CollBarHit()
     {
+        TotalHits++;
+
         // feel free to move this elsewhere to make it cleaner if you want to
         AudioManager.Instance?.Play(SoundBank.PaddleHit);
     }

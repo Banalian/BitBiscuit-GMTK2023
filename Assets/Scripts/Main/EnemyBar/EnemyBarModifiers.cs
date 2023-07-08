@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class EnemyBarModifiers : MonoBehaviour
 {
-    Transform spr;
+    SpriteRenderer spr;
+    BoxCollider2D coll;
 
     void Awake()
     {
-        spr = transform.GetChild(0);
-        ModSizeUp();
+        spr = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
     public float sizeDur = 3;
-    public float sizeWidth = 25;
+    public float sizeWidth = 6;
 
     [ContextMenu("ModifierSizeUp")]
     public void ModSizeUp()
@@ -23,27 +24,28 @@ public class EnemyBarModifiers : MonoBehaviour
 
     IEnumerator TimerSizeUp()
     {
-        transform.localScale = new(sizeWidth, 1);
-        spr.localScale = new(15/sizeWidth, 1);
+        coll.size = new(sizeWidth/4*0.75f, 1);
 
+        float sprSize = sizeWidth / 4 * 1.5f;
         float timer = sizeDur;
         while (timer > 0)
         {
             timer -= Time.deltaTime;
 
-            spr.localScale = new(Mathf.Lerp(spr.localScale.x, 1, Time.deltaTime*15), 1);
+            spr.size = new(Mathf.Lerp(spr.size.x, sprSize, Time.deltaTime*15), 1);
 
             yield return null;
         }
 
-        transform.localScale = new(15, 1);
-        spr.localScale = new(sizeWidth/15, 1);
+        coll.size = new(0.75f, 1);
 
-        while (spr.localScale.x > 1.01f)
+        while (spr.size.x > 1.51f)
         {
-            spr.localScale = new(Mathf.Lerp(spr.localScale.x, 1, Time.deltaTime * 15), 1);
+            spr.size = new(Mathf.Lerp(spr.size.x, 1.5f, Time.deltaTime*15), 1);
 
             yield return null;
         }
+
+        spr.size = new(1.5f, 1);
     }
 }
