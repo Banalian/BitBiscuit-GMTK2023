@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3752520158492590201}
   m_Layer: 7
   m_Name: Reverse Brick
-  m_TagString: DefaultBounce
+  m_TagString: ReverseBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

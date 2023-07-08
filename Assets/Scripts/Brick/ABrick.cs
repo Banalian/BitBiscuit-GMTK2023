@@ -38,7 +38,7 @@ namespace Brick
         [field:SerializeField] 
         public int ScoreHitValue { get; protected set; } = 1;
 
-        protected virtual void Awake()
+        protected virtual void Start()
         {
             Initialize();
         }
@@ -61,7 +61,7 @@ namespace Brick
             _healthManager.Damage(damage);
             
             ScoreManager.Instance?.AddScore(
-                _healthManager.Health >= _healthManager.Health? 
+                damage >= _healthManager.Health? 
                     this.ScoreDestroyValue :
                     this.ScoreHitValue
                 ); 

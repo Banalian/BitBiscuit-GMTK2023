@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4652700693897862485}
   - component: {fileID: -4185169664995602106}
   - component: {fileID: 4255545942556839460}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gold Brick
-  m_TagString: Untagged
+  m_TagString: DefaultBounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

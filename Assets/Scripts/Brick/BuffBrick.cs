@@ -17,7 +17,7 @@ namespace Brick
 
         private void BoostBricks()
         {
-            var bricks = Physics2D.OverlapCircleAll(transform.position, Radius, LayerMask.GetMask("Brick"));
+            var bricks = Physics2D.OverlapCircleAll(transform.position, Radius, LayerMask.GetMask("Bricks"));
             foreach (var brick in bricks)
             {
                 var boostables = brick.GetComponentsInChildren<IBoostableBrick>();

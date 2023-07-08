@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ScoreDestroyValue>k__BackingField: 1
   <ScoreHitValue>k__BackingField: 1
-  <Radius>k__BackingField: 1
+  <Radius>k__BackingField: 2
 --- !u!114 &2347102122410185443
 MonoBehaviour:
   m_ObjectHideFlags: 0
