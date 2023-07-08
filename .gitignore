@@ -68,3 +68,5 @@ crashlytics-build.properties
 # Rider specific folder
 /.idea/
 .idea/.idea.BitBiscuit-GMTK2023/.idea/
+
+Assets/TextMesh Pro.meta
