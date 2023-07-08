@@ -28,6 +28,12 @@ namespace Brick
         public event UnityAction<GameObject, bool> OnBrickDestroyed;
 
         /// <summary>
+        /// Event fired when the brick successfully gets a level up.
+        /// The GameObject is a reference to the brick, and the int represents the new level
+        /// </summary>
+        public event UnityAction<GameObject, int> OnBrickLevelUp;
+
+        /// <summary>
         /// Score you gain when the brick is destroyed
         /// </summary>
         [field:SerializeField] 
@@ -38,6 +44,19 @@ namespace Brick
         /// </summary>
         [field:SerializeField] 
         public int ScoreHitValue { get; protected set; } = 1;
+
+        /// <summary>
+        /// Current level of the brick
+        /// </summary>
+        [field:SerializeField] 
+        public int CurrentLevel { get; protected set; } = 1;
+        
+        /// <summary>
+        /// Maximum allowed level
+        /// </summary>
+        [field:SerializeField] 
+        public int MaximumLevel { get; protected set; } = 1;
+        
 
         protected virtual void Start()
         {
@@ -113,6 +132,36 @@ namespace Brick
         public void UpgradeDeathScore(int currencyUpgrade)
         {
             ScoreDestroyValue += currencyUpgrade;
+        }
+
+
+        /// <summary>
+        /// Check if a brick can be leveled up
+        /// </summary>
+        /// <returns>true if you can level it up, false otherwise</returns>
+        public bool CanLevelUp()
+        {
+            return CurrentLevel < MaximumLevel;
+        }
+
+        public bool LevelUp()
+        {
+            if (!CanLevelUp())
+            {
+                return false;
+            }
+
+            CurrentLevel++;
+            
+            var boostables = gameObject.GetComponentsInChildren<IBoostableBrick>();
+            foreach (var boostable in boostables)
+            {
+                boostable.Boost();
+            }
+
+            OnBrickLevelUp?.Invoke(gameObject, CurrentLevel);
+
+            return true;
         }
     }
 }

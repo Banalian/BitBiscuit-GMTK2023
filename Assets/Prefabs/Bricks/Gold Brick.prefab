@@ -64,6 +64,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ScoreDestroyValue>k__BackingField: 20
   <ScoreHitValue>k__BackingField: 2
+  <CurrentLevel>k__BackingField: 1
+  <MaximumLevel>k__BackingField: 6
 --- !u!114 &-4185169664995602106
 MonoBehaviour:
   m_ObjectHideFlags: 0

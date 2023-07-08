@@ -20,11 +20,11 @@ namespace Brick
             var bricks = Physics2D.OverlapCircleAll(transform.position, Radius, LayerMask.GetMask("Bricks"));
             foreach (var brick in bricks)
             {
-                var boostables = brick.GetComponentsInChildren<IBoostableBrick>();
-                foreach (var boostable in boostables)
-                {
-                    boostable.Boost();
-                }
+                ABrick aBrick = brick.gameObject.GetComponent<ABrick>();
+                
+                if(!aBrick) continue;
+
+                aBrick.LevelUp();
             }
         }
     }

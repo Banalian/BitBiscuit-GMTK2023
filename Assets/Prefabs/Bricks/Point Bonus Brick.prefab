@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ScoreDestroyValue>k__BackingField: 1
   <ScoreHitValue>k__BackingField: 1
+  <CurrentLevel>k__BackingField: 1
+  <MaximumLevel>k__BackingField: 5
   <BonusMultiplier>k__BackingField: 0.1
   maxMultiplier: 0.5
 --- !u!114 &4124924705549890623
