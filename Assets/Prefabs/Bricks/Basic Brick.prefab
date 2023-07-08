@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2035897889466127959}
   - component: {fileID: 2182324176402899857}
   - component: {fileID: 3529487355440821942}
+  - component: {fileID: 4367813853213716574}
   - component: {fileID: 7535461447254435160}
   m_Layer: 7
   m_Name: Basic Brick
@@ -63,6 +64,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 1
   <Health>k__BackingField: 1
+--- !u!114 &4367813853213716574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418194497571715743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7480430cd248d8aaee397b9e67bbb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &7535461447254435160
 BoxCollider2D:
   m_ObjectHideFlags: 0

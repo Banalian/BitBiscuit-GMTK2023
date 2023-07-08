@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5675237009474217412}
   - component: {fileID: 8299556688049595652}
   - component: {fileID: 8640649331741711442}
+  - component: {fileID: 399596593315146777}
   - component: {fileID: 3752520158492590201}
   m_Layer: 7
   m_Name: Reverse Brick
@@ -147,6 +148,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 2
   <Health>k__BackingField: 2
+--- !u!114 &399596593315146777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8735834014171278652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7480430cd248d8aaee397b9e67bbb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &3752520158492590201
 BoxCollider2D:
   m_ObjectHideFlags: 0

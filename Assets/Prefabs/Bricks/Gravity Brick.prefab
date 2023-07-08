@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 233426870108520646}
   - component: {fileID: 4398980404285364300}
   - component: {fileID: 8953295779694297200}
+  - component: {fileID: 508798375560228864}
   - component: {fileID: 98760020529489556}
   m_Layer: 7
   m_Name: Gravity Brick
@@ -151,6 +152,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 2
   <Health>k__BackingField: 2
+--- !u!114 &508798375560228864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049515572627373457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dee2ccc7baf4f5fb0c664860ea355cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &98760020529489556
 BoxCollider2D:
   m_ObjectHideFlags: 0

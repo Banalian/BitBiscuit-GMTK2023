@@ -80,5 +80,14 @@ namespace Brick
         {
             IsActivated = false;
         }
+
+        public void ReduceCooldown(float reduction = 1f)
+        {
+            cooldown -= reduction;
+            if (cooldown <= 0f)
+            {
+                cooldown = 0.5f;
+            }
+        }
     }
 }

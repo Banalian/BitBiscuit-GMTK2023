@@ -100,5 +100,14 @@ namespace Brick
                 Hit(other.gameObject, 1);
             }
         }
+
+        /// <summary>
+        /// Add a given value to the score destroy value
+        /// </summary>
+        /// <param name="currencyUpgrade">Amount to add to the destroy score</param>
+        public void UpgradeDeathScore(int currencyUpgrade)
+        {
+            ScoreDestroyValue += currencyUpgrade;
+        }
     }
 }

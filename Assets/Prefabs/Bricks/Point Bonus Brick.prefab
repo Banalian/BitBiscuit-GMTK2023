@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4787202664149011904}
   - component: {fileID: 465655054322514944}
   - component: {fileID: 4124924705549890623}
+  - component: {fileID: 374327103198584538}
   - component: {fileID: 6621332800566582317}
   m_Layer: 7
   m_Name: Point Bonus Brick
@@ -50,6 +51,7 @@ MonoBehaviour:
   <ScoreDestroyValue>k__BackingField: 1
   <ScoreHitValue>k__BackingField: 1
   <BonusMultiplier>k__BackingField: 0.1
+  maxMultiplier: 0.5
 --- !u!114 &4124924705549890623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +66,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 1
   <Health>k__BackingField: 1
+--- !u!114 &374327103198584538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245497570631657096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1cb98a55304c15960f4610a5a2aeb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplierUpgrade: 0.1
 --- !u!61 &6621332800566582317
 BoxCollider2D:
   m_ObjectHideFlags: 0
