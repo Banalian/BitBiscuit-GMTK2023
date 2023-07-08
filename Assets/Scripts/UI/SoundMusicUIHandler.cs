@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 
 namespace UI
@@ -16,6 +17,7 @@ namespace UI
         
         public void ChangeSound()
         {
+            AudioManager.Instance.Play(SoundBank.MenuClick);
             _isSoundOn = !_isSoundOn;
             soundCross.SetActive(!_isSoundOn);
             AudioManager.Instance.SetSoundVolume(_isSoundOn ? 1f : 0f);
@@ -23,6 +25,7 @@ namespace UI
         
         public void ChangeMusic()
         {
+            AudioManager.Instance.Play(SoundBank.MenuClick);
             _isMusicOn = !_isMusicOn;
             musicCross.SetActive(!_isMusicOn);
             AudioManager.Instance.SetMusicVolume(_isMusicOn ? 1f : 0f);
