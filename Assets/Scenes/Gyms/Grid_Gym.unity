@@ -653,7 +653,7 @@ PrefabInstance:
     - target: {fileID: 6632036867001839639, guid: 2c46927b292564249afeacb69ebb72ef, type: 3}
       propertyPath: core
       value: 
-      objectReference: {fileID: 2431349534084119225, guid: 777abaa94a3d35c4abe6c4224cafa071, type: 3}
+      objectReference: {fileID: 80974491936278146, guid: a5d6400daea91e041839bfe8905f44dc, type: 3}
     - target: {fileID: 6632036867001839639, guid: 2c46927b292564249afeacb69ebb72ef, type: 3}
       propertyPath: gridSize.x
       value: 6
