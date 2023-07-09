@@ -48,8 +48,8 @@ namespace Scoring
         public void ModifyMultiplier (float modifier)
         {
             ScoreMultiplier += modifier;
-            // round it to 1 decimal
-            ScoreMultiplier = Mathf.Round(ScoreMultiplier * 10f) / 10f;
+            // round it to 2 decimal
+            ScoreMultiplier = Mathf.Round(ScoreMultiplier * 100f) / 100f;
         }
         
         /// <summary>

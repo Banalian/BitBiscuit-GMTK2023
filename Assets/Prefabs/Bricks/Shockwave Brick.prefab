@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f8cbe2206548edb107ff6215c3c63a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ScoreCost>k__BackingField: 50
+  <ScoreCost>k__BackingField: 100
   <ScoreDestroyValue>k__BackingField: 10
   <ScoreHitValue>k__BackingField: 0
   <CurrentLevel>k__BackingField: 1
