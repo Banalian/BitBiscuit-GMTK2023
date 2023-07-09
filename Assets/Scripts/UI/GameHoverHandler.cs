@@ -55,6 +55,15 @@ namespace UI
         
         public void Restart()
         {
+            FindObjectOfType<AnimTransHandler>().DoIntro();
+
+            StartCoroutine(WaitTrans());
+        }
+
+        IEnumerator WaitTrans()
+        {
+            yield return new WaitForSecondsRealtime(1);
+
             AudioManager.Instance.Play(SoundBank.MenuClick);
             Time.timeScale = 1;
             ElementManager.Instance.ResetSelected();
