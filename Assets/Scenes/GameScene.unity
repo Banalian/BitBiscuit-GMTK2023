@@ -1518,6 +1518,10 @@ PrefabInstance:
       propertyPath: brickSize.y
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 6632036867001839639, guid: 2c46927b292564249afeacb69ebb72ef, type: 3}
+      propertyPath: coreOffset.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 9115916848887438668, guid: 2c46927b292564249afeacb69ebb72ef, type: 3}
       propertyPath: m_RootOrder
       value: 14

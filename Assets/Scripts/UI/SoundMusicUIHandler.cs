@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using UnityEngine;
 
@@ -14,7 +15,17 @@ namespace UI
         
         [SerializeField]
         private GameObject musicCross;
-        
+
+
+        private void Start()
+        {
+            _isSoundOn = AudioManager.Instance.soundVolume > 0f;
+            _isMusicOn = AudioManager.Instance.musicVolume > 0f;
+            
+            soundCross.SetActive(!_isSoundOn);
+            musicCross.SetActive(!_isMusicOn);
+        }
+
         public void ChangeSound()
         {
             AudioManager.Instance.Play(SoundBank.MenuClick);

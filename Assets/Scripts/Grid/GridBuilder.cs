@@ -37,7 +37,10 @@ namespace Grid
         [SerializeField] 
         [Tooltip("The object that will be used as the core")]
         private GameObject core;
-
+        
+        [SerializeField]
+        [Tooltip("Offset the core by this amount")]
+        private Vector2 coreOffset = Vector2.zero;
         
         private void Start()
         {
@@ -54,6 +57,10 @@ namespace Grid
                     if ((int)corePosition.x == y && (int)corePosition.y == x)
                     {
                         var coreBrick = Instantiate(core,currentPosition,Quaternion.identity,this.transform);
+                        var transformPosition = coreBrick.transform.position;
+                        transformPosition.x += coreOffset.x;
+                        transformPosition.y += coreOffset.y;
+                        coreBrick.transform.position = transformPosition;
                         coreBrick.name += $" {y},{x}";
                     }
                     else
