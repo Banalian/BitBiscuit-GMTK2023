@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3414738991641795831}
   - component: {fileID: 8330312412330687480}
   - component: {fileID: 8188364686050200960}
+  - component: {fileID: 8710998106083790105}
   m_Layer: 5
   m_Name: Delete
   m_TagString: Untagged
@@ -133,6 +134,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8710998106083790105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136644765394227710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f3da833e4243afb8642f03d64b53fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToDisplay: 'Destroy a brick.
+
+    Does not give any points.'
 --- !u!1 &5301446180294937005
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +161,7 @@ GameObject:
   - component: {fileID: 676589086872691687}
   - component: {fileID: 183704769232566722}
   - component: {fileID: 6611902207398499670}
+  - component: {fileID: 6193928527941166966}
   m_Layer: 5
   m_Name: Upgrade
   m_TagString: Untagged
@@ -266,6 +283,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6193928527941166966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301446180294937005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f3da833e4243afb8642f03d64b53fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToDisplay: 'Upgrade a brick
+
+    for a given cost.'
 --- !u!1 &6776512966274753716
 GameObject:
   m_ObjectHideFlags: 0

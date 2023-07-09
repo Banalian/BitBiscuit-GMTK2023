@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5255853618511923579}
   - component: {fileID: 1369824150403056095}
   - component: {fileID: 1586752212085879278}
+  - component: {fileID: 5051328390598452394}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -104,6 +105,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5051328390598452394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205781012158687044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f3da833e4243afb8642f03d64b53fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToDisplay: Credits.
 --- !u!1 &298741767902380192
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +518,7 @@ GameObject:
   - component: {fileID: 8284758736861795337}
   - component: {fileID: 7455843743932666820}
   - component: {fileID: 7156779956249722750}
+  - component: {fileID: 1843604937291923551}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -597,6 +612,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1843604937291923551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2916535906476282490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f3da833e4243afb8642f03d64b53fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToDisplay: Sound Effect On/Off
 --- !u!1 &3021992768819766797
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +948,7 @@ GameObject:
   - component: {fileID: 2820513798604309922}
   - component: {fileID: 6170318863566792222}
   - component: {fileID: 536853522758433067}
+  - component: {fileID: 8317071021338101136}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -1013,6 +1042,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8317071021338101136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4904558516042472130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f3da833e4243afb8642f03d64b53fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToDisplay: Game Music On/Off
 --- !u!1 &5020735346749379905
 GameObject:
   m_ObjectHideFlags: 0
