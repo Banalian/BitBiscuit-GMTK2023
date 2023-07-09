@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f858ae7daa0846a4d80038bfca344a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Score>k__BackingField: 0
+  <BaseScore>k__BackingField: 50
+  <TotalPoints>k__BackingField: 0
+  <SpentPoints>k__BackingField: 0
 --- !u!1001 &8498204626015991534
 PrefabInstance:
   m_ObjectHideFlags: 0
