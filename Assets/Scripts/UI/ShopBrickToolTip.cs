@@ -14,20 +14,20 @@ namespace UI
         
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if(TooltipScreenSpaceUI.Instance == null) return;
             TooltipScreenSpaceUI.Instance.ShowTooltip(GenerateTooltipText);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if(TooltipScreenSpaceUI.Instance == null) return;
             TooltipScreenSpaceUI.Instance.HideTooltip();
         }
         
         private void OnDisable()
         {
-            if (TooltipScreenSpaceUI.Instance != null)
-            {
-                TooltipScreenSpaceUI.Instance.HideTooltip();
-            }
+            if(TooltipScreenSpaceUI.Instance == null) return;
+            TooltipScreenSpaceUI.Instance.HideTooltip();
         }
 
         /// <summary>

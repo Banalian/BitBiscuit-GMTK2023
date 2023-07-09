@@ -30,16 +30,19 @@ namespace Brick
 
         private void OnMouseEnter()
         {
+            if(TooltipScreenSpaceUI.Instance == null) return;
             TooltipScreenSpaceUI.Instance.ShowTooltip(GenerateTooltipText);
         }
 
         private void OnMouseExit()
         {
+            if(TooltipScreenSpaceUI.Instance == null) return;
             TooltipScreenSpaceUI.Instance.HideTooltip();
         }
 
         private void OnDisable()
         {
+            if(TooltipScreenSpaceUI.Instance == null) return;
             TooltipScreenSpaceUI.Instance.HideTooltip();
         }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using Brick;
 using Scoring;
@@ -112,6 +113,7 @@ public class EnemyBallColl : MonoBehaviour
         prefab.StartVel(rb.velocity, ball);
 
         ball.StartCoroutine(ball.WaitRespawn());
+        AudioManager.Instance?.Play(SoundBank.Explosion);
 
         ScoreManager.Instance?.AddScore(10);
     }
