@@ -94,7 +94,7 @@ namespace Grid
     
         public void ResetSelected()
         {
-            selectedElement = null;
+            selectedElement = defaultElement;
         }
     
 

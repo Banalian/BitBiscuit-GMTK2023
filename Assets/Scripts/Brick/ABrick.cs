@@ -1,5 +1,6 @@
 ﻿using System;
 using Audio;
+using Grid;
 using Scoring;
 using UnityEngine;
 using UnityEngine.Events;
@@ -112,7 +113,7 @@ namespace Brick
         /// <param name="brick">The brick that died (here, ourself)</param>
         protected virtual void OnDeath(GameObject brick)
         {
-            DestroyBrick();
+            ElementManager.Instance.DeleteElement(this.gameObject);
         }
 
 
