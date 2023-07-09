@@ -24,7 +24,10 @@ namespace UI
         
         private void OnDisable()
         {
-            TooltipScreenSpaceUI.Instance.HideTooltip();
+            if (TooltipScreenSpaceUI.Instance != null)
+            {
+                TooltipScreenSpaceUI.Instance.HideTooltip();
+            }
         }
 
         /// <summary>

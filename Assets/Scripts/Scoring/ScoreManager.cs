@@ -6,6 +6,10 @@ namespace Scoring
     public class ScoreManager : MonoBehaviour
     {
         public static ScoreManager Instance{ get; private set; }
+        
+        [Tooltip("Base amount to give when the game starts")]
+        [field: SerializeField]
+        public int BaseScore { get; private set; } = 0;
 
         [Tooltip("The Total score value")]
         [field: SerializeField] 
@@ -15,7 +19,9 @@ namespace Scoring
         [field: SerializeField]
         public int SpentPoints { get; private set; } = 0;
 
-        protected float scoreMultiplier = 1;
+        [Tooltip("Current score multiplier")]
+        [field: SerializeField]
+        public float ScoreMultiplier { get; private set; }= 1;
 
         // Event fired everytime the score changes, it contains the amount by which the score was changed.
         public UnityAction<int> OnScoreChangedEvent;
@@ -32,6 +38,7 @@ namespace Scoring
             { 
                 Instance = this; 
             } 
+            ResetScore(false);
         }
         
         /// <summary>
@@ -40,9 +47,9 @@ namespace Scoring
         /// <param name="modifier"> value to add or retract</param>
         public void ModifyMultiplier (float modifier)
         {
-            scoreMultiplier += modifier;
+            ScoreMultiplier += modifier;
             // round it to 1 decimal
-            scoreMultiplier = Mathf.Round(scoreMultiplier * 10f) / 10f;
+            ScoreMultiplier = Mathf.Round(ScoreMultiplier * 10f) / 10f;
         }
         
         /// <summary>
@@ -51,7 +58,7 @@ namespace Scoring
         /// <param name="scoreAmount"></param>
         public void AddScore(int scoreAmount)
         {
-            this.TotalPoints += scoreAmount;
+            this.TotalPoints += (int) Mathf.Round(scoreAmount * ScoreMultiplier);
             OnScoreChangedEvent?.Invoke(scoreAmount);
         }
         
@@ -78,9 +85,9 @@ namespace Scoring
         /// <param name="resetEvent">If true, the OnScoreChangedEvent will be reset, otherwise it will be invoked with a value of 0</param>
         public void ResetScore(bool resetEvent = true)
         {
-            this.TotalPoints = 0;
+            this.TotalPoints = BaseScore;
             this.SpentPoints = 0;
-            this.scoreMultiplier = 1;
+            this.ScoreMultiplier = 1;
             
             if (resetEvent)
             {

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Scoring;
 using TMPro;
 using UI;
 using UnityEngine;
@@ -53,7 +54,7 @@ namespace Brick
                 "Type: " + GetBrickType(_brick),
                 "Health: " + _healthManager.Health,
                 _brick.CanLevelUp() ? _brick.GetUpgradeCost() + " points to upgrade" : "Max level reached",
-                "Death reward: " + _brick.ScoreDestroyValue + " points"
+                "Death reward: " + _brick.ScoreDestroyValue + " points" + " * " + ScoreManager.Instance.ScoreMultiplier + " = " + _brick.ScoreDestroyValue * ScoreManager.Instance.ScoreMultiplier + " points"
             };
 
             // Special cases
@@ -67,7 +68,7 @@ namespace Brick
                     }
                     break;
                 case PointBonusBrick pointBonusBrick:
-                    text.Add("Current Multiplier: " + 1+ pointBonusBrick.BonusMultiplier);
+                    text.Add("Current Multiplier: " + (1 + pointBonusBrick.BonusMultiplier));
                     break;
             }
             
