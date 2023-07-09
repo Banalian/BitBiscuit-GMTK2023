@@ -163,6 +163,9 @@ namespace Grid
             {
                 AudioManager.Instance.Play(SoundBank.ShopBuy);
                 brick.LevelUp();
+            } else
+            {
+                AudioManager.Instance.Play(SoundBank.MenuError);
             }
         }
 
