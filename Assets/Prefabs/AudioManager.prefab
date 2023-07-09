@@ -93,6 +93,18 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 4a4f1059632ae8042b079db781b20df6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: e0a0fddd9b0f4f84a99fa4c7a0cac3d3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: GameLoop
     clip: {fileID: 8300000, guid: 3f072c93ed3ba8047a2a9d13069802a9, type: 3}
     volume: 0.7

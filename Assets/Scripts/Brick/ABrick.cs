@@ -110,7 +110,7 @@ namespace Brick
 
             AudioManager.Instance.Play(SoundBank.BrickBreak);
 
-            Destroy(gameObject);
+            ElementManager.Instance.DeleteElement(this.gameObject);
         }
 
         public int GetScoreValue()
@@ -125,7 +125,7 @@ namespace Brick
         /// <param name="brick">The brick that died (here, ourself)</param>
         protected virtual void OnDeath(GameObject brick)
         {
-            ElementManager.Instance.DeleteElement(this.gameObject);
+            DestroyBrick();
         }
 
 

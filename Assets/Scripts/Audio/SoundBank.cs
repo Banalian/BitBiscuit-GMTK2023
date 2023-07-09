@@ -13,6 +13,8 @@ namespace Audio
         Upgrade,
         ShopBuy,
         MenuClick,
-        MenuError
+        MenuError,
+        Explosion,
+        GameOver
     }
 }

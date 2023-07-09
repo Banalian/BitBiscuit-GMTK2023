@@ -75,9 +75,21 @@ namespace Scoring
         /// <summary>
         /// Resets the score to zero.
         /// </summary>
-        private void ResetScore()
+        /// <param name="resetEvent">If true, the OnScoreChangedEvent will be reset, otherwise it will be invoked with a value of 0</param>
+        public void ResetScore(bool resetEvent = true)
         {
             this.TotalPoints = 0;
+            this.SpentPoints = 0;
+            this.scoreMultiplier = 1;
+            
+            if (resetEvent)
+            {
+                OnScoreChangedEvent = null;
+            }
+            else
+            {
+                OnScoreChangedEvent?.Invoke(0);
+            }
         }
     }
 }
