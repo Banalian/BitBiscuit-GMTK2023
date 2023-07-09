@@ -54,7 +54,7 @@ MonoBehaviour:
   <ScoreDestroyValue>k__BackingField: 5
   <ScoreHitValue>k__BackingField: 0
   <CurrentLevel>k__BackingField: 1
-  <MaximumLevel>k__BackingField: 5
+  <MaximumLevel>k__BackingField: 4
   BaseUpgradeCost: 5
   description: 'Special brick that augments the point multiplier while alive.
 
@@ -63,7 +63,7 @@ MonoBehaviour:
 
     Can be upgraded to increase the
     multiplier.'
-  <BonusMultiplier>k__BackingField: 0.1
+  <BonusMultiplier>k__BackingField: 0.2
   maxMultiplier: 0.5
 --- !u!114 &4124924705549890623
 MonoBehaviour:
@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0badc20d074e958c4bc70356ed4fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 1
-  <Health>k__BackingField: 1
+  <MaxHealth>k__BackingField: 2
+  <Health>k__BackingField: 2
 --- !u!114 &374327103198584538
 MonoBehaviour:
   m_ObjectHideFlags: 0

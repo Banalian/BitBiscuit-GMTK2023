@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f858ae7daa0846a4d80038bfca344a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BaseScore>k__BackingField: 50
+  <BaseScore>k__BackingField: 100
   <TotalPoints>k__BackingField: 0
   <SpentPoints>k__BackingField: 0
+  <ScoreMultiplier>k__BackingField: 1
 --- !u!1001 &8498204626015991534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,6 +57,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8611932234277511108}
     m_Modifications:
+    - target: {fileID: 2422611282039403561, guid: ca34a0785f9bf6b4c82c8c6a79d61684, type: 3}
+      propertyPath: <PointsPerTick>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2765016799189462875, guid: ca34a0785f9bf6b4c82c8c6a79d61684, type: 3}
       propertyPath: m_RootOrder
       value: -1
