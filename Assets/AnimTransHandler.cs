@@ -9,16 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class AnimTransHandler : MonoBehaviour
 {
-    public bool intro;
-
-    void Awake()
-    {
-        if (intro)
-        {
-            GetComponent<Animator>().Play("Idle");
-        }
-    }
-
     public void DoIntro()
     {
         GetComponent<Animator>().Play("TransIntro");
