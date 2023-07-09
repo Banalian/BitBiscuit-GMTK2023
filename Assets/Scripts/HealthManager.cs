@@ -43,6 +43,8 @@ public class HealthManager : MonoBehaviour
         {
             Health = 0;
             OnDeathEvent?.Invoke(gameObject);
+
+            FindObjectOfType<ParSprHandler>().EmitParticles(transform.position);
         }
     }
     

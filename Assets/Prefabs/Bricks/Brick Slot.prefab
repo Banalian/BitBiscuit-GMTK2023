@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2035897889466127959}
   - component: {fileID: 899198987285078426}
   - component: {fileID: 5249384985564624937}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Brick Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8518446259798989258}
   - component: {fileID: 8608184459614526676}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

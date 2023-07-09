@@ -30,11 +30,11 @@ public class EnemyBallColl : MonoBehaviour
             case "EnemyBar":
                 TypeBar(ray, dis);
                 break;
-            case "ReverseBrick":
-                TypeReverse(ray, dis);
-                break;
             case "DefaultBounce":
                 TypeDefault(ray, dis);
+                break;
+            case "ReverseBrick":
+                TypeReverse(ray, dis);
                 break;
         }
         
@@ -53,12 +53,6 @@ public class EnemyBallColl : MonoBehaviour
 
     public void TypeBar(RaycastHit2D ray, float dis)
     {
-        /*rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
-        Vector2 normDis = rb.velocity.normalized * (dis-ray.distance);
-        rb.position = ray.point + normDis;
-        ball.lastPos = ray.point + normDis * .01f;
-        Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);*/
-
         rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
         rb.position = ray.point + ray.normal * .25f;
         ball.lastPos = ray.point + ray.normal * .01f;
@@ -94,6 +88,7 @@ public class EnemyBallColl : MonoBehaviour
         rb.position = ray.point + ray.normal * .25f;
         ball.lastPos = ray.point + ray.normal * .01f;
         Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
+        Debug.Log(ray.collider);
 
         if (relay) { ball.DetBarLose(); return; }
 

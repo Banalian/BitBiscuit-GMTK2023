@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3152924553479006193}
   - component: {fileID: 5476864337880025960}
   - component: {fileID: 7810545802777314049}
-  - component: {fileID: 6961157219717050560}
+  - component: {fileID: 6148010758706599087}
   m_Layer: 7
   m_Name: Core brick
   m_TagString: DefaultBounce
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4162877703942741158}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3152924553479006193
 MonoBehaviour:
@@ -78,8 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7480430cd248d8aaee397b9e67bbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &6961157219717050560
-PolygonCollider2D:
+--- !u!61 &6148010758706599087
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -120,17 +120,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.375, y: 0.33333334}
-      - {x: -0.45833334, y: 0.25}
-      - {x: -0.45833334, y: -0.25}
-      - {x: -0.375, y: -0.33333334}
-      - {x: 0.375, y: -0.33333334}
-      - {x: 0.45833334, y: -0.25}
-      - {x: 0.45833334, y: 0.25}
-      - {x: 0.375, y: 0.33333334}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.65}
+  m_EdgeRadius: 0
 --- !u!1 &2969577408866879379
 GameObject:
   m_ObjectHideFlags: 0

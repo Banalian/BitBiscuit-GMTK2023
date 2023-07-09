@@ -27,7 +27,7 @@ public class EnemyBallContr : MonoBehaviour
         trail = transform.GetChild(0).GetComponent<TrailRenderer>();
 
         lastPos = rb.position;
-        rb.velocity = new Vector2(Random.Range(0.2f, 1) * Mathf.Sign(rb.position.x), -1);
+        rb.velocity = new Vector2(Random.Range(0.2f, 1) * Mathf.Sign(Random.Range(-1, 1)), -1);
     }
 
     void FixedUpdate()
@@ -78,13 +78,14 @@ public class EnemyBallContr : MonoBehaviour
     {
         if (rb.velocity.y >= 0) return;
 
+        Physics2D.queriesHitTriggers = false;
+
         LayerMask mask = ~LayerMask.GetMask("Enemy");
         Vector2 velNorm = rb.velocity.normalized;
 
         float rayDis = (rb.position.y+3.75f)/-velNorm.y;
         RaycastHit2D rayFirst = Physics2D.Raycast(rb.position, velNorm, rayDis, mask);
         Debug.DrawRay(rb.position, velNorm * rayDis, Color.white);
-        Debug.Log((bool)rayFirst);
 
         if (!rayFirst) { bar.LandPosCalc(rb.position+velNorm*rayDis, rayFirst.distance); return; }
 
@@ -93,7 +94,6 @@ public class EnemyBallContr : MonoBehaviour
         float raySecDis = (raySecOff.y + 3.75f) / -velNorm.y;
         RaycastHit2D raySecond = Physics2D.Raycast(raySecOff, raySecPer, raySecDis, mask);
         Debug.DrawRay(raySecOff, raySecPer * raySecDis, Color.yellow);
-        Debug.Log((bool)raySecond);
 
         if (!raySecond) { bar.LandPosCalc(raySecOff+raySecPer*raySecDis, rayFirst.distance+raySecond.distance); return; }
 
@@ -102,9 +102,10 @@ public class EnemyBallContr : MonoBehaviour
         float rayLastDis = (rayLastOff.y + 3.75f) / -velNorm.y;
         RaycastHit2D rayLast = Physics2D.Raycast(rayLastOff, rayLastPer, rayLastDis, mask);
         Debug.DrawRay(rayLastOff, rayLastPer * rayLastDis, Color.red);
-        Debug.Log((bool)rayLast);
 
         if (!rayLast) { bar.LandPosCalc(rayLastOff+rayLastPer*rayLastDis, rayFirst.distance+raySecond.distance+rayLast.distance); return; }
+
+        Physics2D.queriesHitTriggers = true;
     }
 
     void DetHeight()
@@ -130,7 +131,7 @@ public class EnemyBallContr : MonoBehaviour
         rb.position = new Vector2(0, -3);
         transform.position = rb.position;
         lastPos = rb.position;
-        rb.velocity = new Vector2(Random.Range(0.2f, 1) * Mathf.Sign(rb.position.x), -1);
+        rb.velocity = new Vector2(Random.Range(0.2f, 1) * Mathf.Sign(Random.Range(-1, 1)), -1);
         trail.Clear();
     }
 }
