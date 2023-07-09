@@ -37,6 +37,7 @@ namespace Brick
         /// <summary>
         /// Points needed to buy the brick
         /// </summary>
+        [field:SerializeField] 
         public int ScoreCost { get; protected set; } = 1;
         
         /// <summary>

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7640655181778091901
 MonoBehaviour:
@@ -87,6 +87,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: MenuError
+    clip: {fileID: 8300000, guid: 7e686f4aced7c9e4d895773c9b8ece1a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: GameLoop
     clip: {fileID: 8300000, guid: 3f072c93ed3ba8047a2a9d13069802a9, type: 3}
     volume: 0.7
@@ -94,3 +100,5 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   <globalVolume>k__BackingField: 1
+  <musicVolume>k__BackingField: 1
+  <soundVolume>k__BackingField: 1

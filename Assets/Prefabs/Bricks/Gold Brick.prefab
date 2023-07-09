@@ -64,8 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcf3f962847411fb3a64b032442062e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ScoreCost>k__BackingField: 15
   <ScoreDestroyValue>k__BackingField: 20
-  <ScoreHitValue>k__BackingField: 2
+  <ScoreHitValue>k__BackingField: 0
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 6
   BaseUpgradeCost: 5

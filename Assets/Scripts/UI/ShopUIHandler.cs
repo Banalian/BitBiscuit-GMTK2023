@@ -27,7 +27,7 @@ namespace UI
 
         private void OnScoreChanged(int amount)
         {
-            scoreText.SetText(ScoreManager.Instance.Score + "p");
+            scoreText.SetText(ScoreManager.Instance.GetRemainingScore() + "p");
         }
 
         private void Update()

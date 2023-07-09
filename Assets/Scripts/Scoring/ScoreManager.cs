@@ -7,10 +7,14 @@ namespace Scoring
     {
         public static ScoreManager Instance{ get; private set; }
 
-        [Tooltip("The current score value")]
+        [Tooltip("The Total score value")]
         [field: SerializeField] 
-        public int Score { get; private set; } = 0;
+        public int TotalPoints { get; private set; } = 0;
         
+        [Tooltip("The amount spent")]
+        [field: SerializeField]
+        public int SpentPoints { get; private set; } = 0;
+
         protected float scoreMultiplier = 1;
 
         // Event fired everytime the score changes, it contains the amount by which the score was changed.
@@ -47,8 +51,25 @@ namespace Scoring
         /// <param name="scoreAmount"></param>
         public void AddScore(int scoreAmount)
         {
-            this.Score += scoreAmount;
+            this.TotalPoints += scoreAmount;
             OnScoreChangedEvent?.Invoke(scoreAmount);
+        }
+        
+        public bool TrySpendScore(int scoreAmount)
+        {
+            // check if we have enough points
+            if (TotalPoints - SpentPoints - scoreAmount < 0)
+            {
+                return false;
+            }
+            SpentPoints += scoreAmount;
+            OnScoreChangedEvent?.Invoke(-scoreAmount);
+            return true;
+        }
+        
+        public int GetRemainingScore()
+        {
+            return TotalPoints - SpentPoints;
         }
         
         /// <summary>
@@ -56,7 +77,7 @@ namespace Scoring
         /// </summary>
         private void ResetScore()
         {
-            this.Score = 0;
+            this.TotalPoints = 0;
         }
     }
 }

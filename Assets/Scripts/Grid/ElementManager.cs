@@ -109,7 +109,7 @@ namespace Grid
                     {
                         // Check the element's price
                         var price = selectedElement.GetComponent<ABrick>().ScoreCost;
-                        if (ScoreManager.Instance.Score < price)
+                        if (!ScoreManager.Instance.TrySpendScore(price))
                         {
                             AudioManager.Instance.Play(SoundBank.MenuError);
                             return;
