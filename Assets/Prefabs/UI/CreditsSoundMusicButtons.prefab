@@ -117,7 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f3da833e4243afb8642f03d64b53fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToDisplay: Credits.
+  textToDisplay: 'Credits.
+
+    Shows the people who made this game.'
 --- !u!1 &298741767902380192
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f3da833e4243afb8642f03d64b53fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToDisplay: Sound Effect On/Off
+  textToDisplay: 'Sound Effect.
+
+    Can be turned on or off'
 --- !u!1 &3021992768819766797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f3da833e4243afb8642f03d64b53fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToDisplay: Game Music On/Off
+  textToDisplay: 'Game Music.
+
+    Can be turned on or off'
 --- !u!1 &5020735346749379905
 GameObject:
   m_ObjectHideFlags: 0
