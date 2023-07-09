@@ -75,7 +75,7 @@ namespace UI
         
         public void HideTooltip()
         {
-            if (gameObject)
+            if (gameObject != null)
             {
                 gameObject.SetActive(false);
             }

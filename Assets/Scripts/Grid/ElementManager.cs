@@ -1,4 +1,7 @@
 using System;
+using Audio;
+using Brick;
+using Scoring;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -97,31 +100,36 @@ namespace Grid
     
         public void ReplaceElement(GameObject objToReplace)
         {
-            if (selectedElement != null)
+            if (selectedElement == null) return;
+            
+            
+            if (selectedElement.gameObject.GetComponent<ABrick>())
             {
-                if (objToReplace.gameObject.GetComponent<ABrick>())
+                if (selectedElement == defaultElement)
                 {
-                    if (selectedElement == defaultElement)
-                    {
-                        GameObject placedElement = ReplaceElementWith(objToReplace, selectedElement);
-                    }
-                    else
-                    {
-                        // Check the element's price
-                        var price = selectedElement.GetComponent<ABrick>().ScoreCost;
-                        if (!ScoreManager.Instance.TrySpendScore(price))
-                        {
-                            AudioManager.Instance.Play(SoundBank.MenuError);
-                            return;
-                        }
-                    
-                        AudioManager.Instance.Play(SoundBank.ShopBuy);
-                    }  
-                }
-                else
-                {    
                     GameObject placedElement = ReplaceElementWith(objToReplace, selectedElement);
                 }
+                else
+                {
+                    // Check the element's price
+                    var price = selectedElement.GetComponent<ABrick>().ScoreCost;
+                    if (!ScoreManager.Instance.TrySpendScore(price))
+                    {
+                        AudioManager.Instance.Play(SoundBank.MenuError);
+                        return;
+                    }
+                    
+                    AudioManager.Instance.Play(SoundBank.ShopBuy);
+                    GameObject placedElement = ReplaceElementWith(objToReplace, selectedElement);
+                }  
+            }
+            else
+            {
+                if (selectedElement == defaultElement)
+                {
+                    AudioManager.Instance.Play(SoundBank.BrickBreak);
+                }
+                GameObject placedElement = ReplaceElementWith(objToReplace, selectedElement);
             }
         }
 
@@ -151,8 +159,9 @@ namespace Grid
         public void UpgradeElement(GameObject elemGO)
         {
             var brick = elemGO.GetComponent<ABrick>();
-            if (brick.CanLevelUp())
+            if (brick.CanLevelUp() && ScoreManager.Instance.TrySpendScore(brick.GetUpgradeCost()))
             {
+                AudioManager.Instance.Play(SoundBank.ShopBuy);
                 brick.LevelUp();
             }
         }

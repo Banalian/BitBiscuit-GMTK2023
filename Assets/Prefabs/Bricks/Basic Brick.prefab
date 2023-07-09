@@ -55,7 +55,7 @@ MonoBehaviour:
   <ScoreHitValue>k__BackingField: 0
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 6
-  BaseUpgradeCost: 10
+  BaseUpgradeCost: 5
 --- !u!114 &3529487355440821942
 MonoBehaviour:
   m_ObjectHideFlags: 0

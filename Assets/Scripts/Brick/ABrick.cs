@@ -189,7 +189,7 @@ namespace Brick
         /// <returns>the cost in point to upgrade the brick</returns>
         public virtual int GetUpgradeCost()
         {
-            return (int)Math.Round(BaseUpgradeCost * 2.3f);
+            return (int)Math.Round((BaseUpgradeCost + CurrentLevel) * 2.3f);
         }
     }
 }
