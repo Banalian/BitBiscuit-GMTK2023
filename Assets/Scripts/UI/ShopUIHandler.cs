@@ -1,5 +1,8 @@
+using System;
 using Audio;
 using Grid;
+using Scoring;
+using TMPro;
 using UnityEngine;
 
 namespace UI
@@ -7,10 +10,25 @@ namespace UI
     public class ShopUIHandler : MonoBehaviour
     {
 
+        [SerializeField]
+        private TextMeshProUGUI scoreText;
+        
+        
         private GameObject _lastBrick;
         
         [SerializeField]
         private GameObject defaultBrick;
+
+
+        private void Start()
+        {
+            ScoreManager.Instance.OnScoreChangedEvent += OnScoreChanged;
+        }
+
+        private void OnScoreChanged(int amount)
+        {
+            scoreText.SetText(ScoreManager.Instance.Score + "p");
+        }
 
         private void Update()
         {

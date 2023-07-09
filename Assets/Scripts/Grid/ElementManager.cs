@@ -1,4 +1,7 @@
 using System;
+using Audio;
+using Brick;
+using Scoring;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -83,6 +86,18 @@ namespace Grid
         {
             if (selectedElement != null)
             {
+                if (selectedElement != defaultElement)
+                {
+                    // Check the element's price
+                    var price = selectedElement.GetComponent<ABrick>().ScoreCost;
+                    if (ScoreManager.Instance.Score < price)
+                    {
+                        AudioManager.Instance.Play(SoundBank.MenuError);
+                        return;
+                    }
+                    
+                    AudioManager.Instance.Play(SoundBank.ShopBuy);
+                }
                 GameObject placedElement = ReplaceElementWith(objToReplace, selectedElement);
             }
         }

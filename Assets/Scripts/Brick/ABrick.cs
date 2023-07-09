@@ -35,6 +35,11 @@ namespace Brick
         public event UnityAction<GameObject, int> OnBrickLevelChanged;
 
         /// <summary>
+        /// Points needed to buy the brick
+        /// </summary>
+        public int ScoreCost { get; protected set; } = 1;
+        
+        /// <summary>
         /// Score you gain when the brick is destroyed
         /// </summary>
         [field:SerializeField] 

@@ -12,6 +12,7 @@ namespace Audio
         PaddleHit,
         Upgrade,
         ShopBuy,
-        MenuClick
+        MenuClick,
+        MenuError
     }
 }
