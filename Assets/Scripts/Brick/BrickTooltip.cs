@@ -87,7 +87,7 @@ namespace Brick
                 case GoldBrick _:
                     return "Gold";
                 case BallTrajModifierBrick ballTraj:
-                    return ballTraj.force > 0 ? "BoomBox" : "Magnet";
+                    return ballTraj.force < 0 ? "BoomBox" : "Magnet";
                 case PointBonusBrick _:
                     return "Profit";
                 case BuffBrick _:
