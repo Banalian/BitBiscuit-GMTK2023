@@ -88,7 +88,8 @@ public class EnemyBallColl : MonoBehaviour
         rb.position = ray.point + ray.normal * .25f;
         ball.lastPos = ray.point + ray.normal * .01f;
         Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
-        Debug.Log(ray.collider);
+        // commented out to not spam the log, feel free to uncomment if you need to debug
+        //Debug.Log(ray.collider);
 
         if (relay) { ball.DetBarLose(); return; }
 
