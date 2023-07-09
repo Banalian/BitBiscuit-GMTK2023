@@ -68,8 +68,8 @@ MonoBehaviour:
   <ScoreDestroyValue>k__BackingField: 20
   <ScoreHitValue>k__BackingField: 0
   <CurrentLevel>k__BackingField: 1
-  <MaximumLevel>k__BackingField: 6
-  BaseUpgradeCost: 5
+  <MaximumLevel>k__BackingField: 2
+  BaseUpgradeCost: 10
 --- !u!114 &-4185169664995602106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8347045b16c0468c8a16de4249979257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyUpgrade: 5
+  currencyUpgrade: 40
 --- !u!61 &4255545942556839460
 BoxCollider2D:
   m_ObjectHideFlags: 0
