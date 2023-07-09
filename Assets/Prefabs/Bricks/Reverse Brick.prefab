@@ -139,6 +139,10 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
   BaseUpgradeCost: 5
+  description: 'Special brick that completely reverse
+
+    the trajectory of the
+    ball when hit.'
 --- !u!114 &8640649331741711442
 MonoBehaviour:
   m_ObjectHideFlags: 0

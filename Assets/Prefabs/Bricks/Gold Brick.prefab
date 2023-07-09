@@ -70,6 +70,14 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 2
   BaseUpgradeCost: 10
+  description: 'Special brick that give more gold
+
+    than its cost when destroyed.
+
+    Can
+    be upgraded into a platinum
+
+    brick to increase its value.'
 --- !u!114 &-4185169664995602106
 MonoBehaviour:
   m_ObjectHideFlags: 0

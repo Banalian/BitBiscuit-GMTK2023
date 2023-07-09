@@ -56,6 +56,14 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 6
   BaseUpgradeCost: 5
+  description: 'A simple brick.
+
+    Can be upgraded to increase its health.
+
+    Do
+    note that it won''t heal to its maximum
+
+    health when upgraded.'
 --- !u!114 &3529487355440821942
 MonoBehaviour:
   m_ObjectHideFlags: 0

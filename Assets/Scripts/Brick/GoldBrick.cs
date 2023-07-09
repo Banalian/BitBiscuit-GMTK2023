@@ -4,6 +4,5 @@ namespace Brick
 {
     public class GoldBrick : ABrick
     {
-        
     }
 }

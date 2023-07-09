@@ -76,7 +76,6 @@ namespace Brick
             base.DestroyBrick(manual);
         }
 
-
         private IEnumerator ActivationCoroutine()
         {
             Activate();

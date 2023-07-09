@@ -139,6 +139,9 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
   BaseUpgradeCost: 5
+  description: 'A Magnet that has a constant small pull force.
+
+    Always active.'
   <Range>k__BackingField: 2
   force: 0.2
   duration: -1

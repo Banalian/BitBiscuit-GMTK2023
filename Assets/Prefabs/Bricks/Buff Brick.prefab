@@ -55,6 +55,15 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
   BaseUpgradeCost: 5
+  description: 'Special brick that boost the level of
+
+    all surrounding bricks
+    when placed.
+
+    Won''t work on bricks that are already
+
+    at their maximum
+    level.'
   <Radius>k__BackingField: 2
 --- !u!114 &2347102122410185443
 MonoBehaviour:

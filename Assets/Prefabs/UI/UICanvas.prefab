@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 7835782658213047746}
   - component: {fileID: 6681937255032062035}
   - component: {fileID: 5344202165755396891}
+  - component: {fileID: 8441524398256910282}
   m_Layer: 5
   m_Name: Golden Brick
   m_TagString: Untagged
@@ -584,6 +585,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!114 &8441524398256910282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823597516401571253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa01d428db604caf979e10d135164212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickToDisplay: {fileID: 4652700693897862485, guid: 777abaa94a3d35c4abe6c4224cafa071, type: 3}
 --- !u!1 &1962037288262375942
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +611,7 @@ GameObject:
   - component: {fileID: 8703958787882266514}
   - component: {fileID: 136413964257070908}
   - component: {fileID: 3862583523456097036}
+  - component: {fileID: 5342154081205539606}
   m_Layer: 5
   m_Name: Buff Brick
   m_TagString: Untagged
@@ -744,6 +759,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!114 &5342154081205539606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962037288262375942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa01d428db604caf979e10d135164212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickToDisplay: {fileID: 8982329100886704709, guid: 77b133c2e7ccc8849ad9a72477714f9b, type: 3}
 --- !u!1 &2115620895429351641
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +785,7 @@ GameObject:
   - component: {fileID: 1840470267205389426}
   - component: {fileID: 8951079341055459333}
   - component: {fileID: 8560923787321007908}
+  - component: {fileID: 2179168645579820053}
   m_Layer: 5
   m_Name: Point Bonus Brick
   m_TagString: Untagged
@@ -904,6 +933,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!114 &2179168645579820053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115620895429351641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa01d428db604caf979e10d135164212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickToDisplay: {fileID: 465655054322514944, guid: cb56c3c2b4af89546986d7ec788123a6, type: 3}
 --- !u!1 &2545765528213083453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1552,7 @@ GameObject:
   - component: {fileID: 3677862350260669288}
   - component: {fileID: 668846348552461899}
   - component: {fileID: 3065178024387400220}
+  - component: {fileID: 2349406372626163704}
   m_Layer: 5
   m_Name: Reverter Brick
   m_TagString: Untagged
@@ -1657,6 +1700,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!114 &2349406372626163704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104536276567143405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa01d428db604caf979e10d135164212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickToDisplay: {fileID: 8299556688049595652, guid: f397947cfcb472d478dd7068381f834c, type: 3}
 --- !u!1 &4178747356202311535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1726,7 @@ GameObject:
   - component: {fileID: 3887003245365832044}
   - component: {fileID: 3796452769557310025}
   - component: {fileID: 5589706927662070275}
+  - component: {fileID: 8900146701779347116}
   m_Layer: 5
   m_Name: Magnet Brick
   m_TagString: Untagged
@@ -1817,6 +1874,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!114 &8900146701779347116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4178747356202311535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa01d428db604caf979e10d135164212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickToDisplay: {fileID: 4398980404285364300, guid: ba9d4222f1d4b894a83e98262ffbce7d, type: 3}
 --- !u!1 &4431272769603378172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,6 +2035,7 @@ GameObject:
   - component: {fileID: 2273013446316937928}
   - component: {fileID: 1052386759323699594}
   - component: {fileID: 1112994917170622889}
+  - component: {fileID: 4480811268779905213}
   m_Layer: 5
   m_Name: BoomBox
   m_TagString: Untagged
@@ -2112,6 +2183,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!114 &4480811268779905213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5058401050282906641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa01d428db604caf979e10d135164212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickToDisplay: {fileID: 4688149130523273266, guid: 8b87551143e3dad479defaf3048e3935, type: 3}
 --- !u!1 &5325443856950591099
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,6 +4317,7 @@ GameObject:
   - component: {fileID: 1913541312694898748}
   - component: {fileID: 6010514653017684551}
   - component: {fileID: 1371947834594545877}
+  - component: {fileID: 4977921478166082150}
   m_Layer: 5
   m_Name: Basic Brick
   m_TagString: Untagged
@@ -4380,6 +4465,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!114 &4977921478166082150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753681346117208574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa01d428db604caf979e10d135164212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickToDisplay: {fileID: 2182324176402899857, guid: e61b1a6dff67ff540bec8ff286e8d936, type: 3}
 --- !u!1 &8927212670632018282
 GameObject:
   m_ObjectHideFlags: 0

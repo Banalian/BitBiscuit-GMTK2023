@@ -56,6 +56,13 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 5
   BaseUpgradeCost: 5
+  description: 'Special brick that augments the point multiplier while alive.
+
+    Allows
+    to get more points from all the sources.
+
+    Can be upgraded to increase the
+    multiplier.'
   <BonusMultiplier>k__BackingField: 0.1
   maxMultiplier: 0.5
 --- !u!114 &4124924705549890623

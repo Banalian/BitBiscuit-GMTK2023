@@ -39,6 +39,7 @@ namespace UI
             
             Vector2 textSize = _text.GetRenderedValues(false);
             Vector2 paddingSize = padding;
+            paddingSize.x += 30;
             _backgroundRectTransform.sizeDelta = textSize + paddingSize;
         }
 

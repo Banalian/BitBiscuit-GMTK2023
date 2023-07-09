@@ -70,6 +70,13 @@ namespace Brick
         [SerializeField]
         protected int BaseUpgradeCost = 5;
         
+        /// <summary>
+        /// A potentially multi line description of the brick
+        /// </summary>
+        [SerializeField]
+        [TextArea]
+        protected string description = "Default description";
+        
 
         protected virtual void Start()
         {
@@ -190,6 +197,11 @@ namespace Brick
         public virtual int GetUpgradeCost()
         {
             return (int)Math.Round((BaseUpgradeCost + CurrentLevel) * 2.3f);
+        }
+
+        public virtual string GetDescription()
+        {
+            return description;
         }
     }
 }

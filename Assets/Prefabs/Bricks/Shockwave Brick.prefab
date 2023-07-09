@@ -56,6 +56,8 @@ MonoBehaviour:
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
   BaseUpgradeCost: 5
+  description: "A Boombox that can repel the ball.\nActivates when the player is
+    close.\nOn a 4 seconds cooldown. \nCan be upgraded to reduce the cooldown."
   <Range>k__BackingField: 2
   force: -1
   duration: 1
