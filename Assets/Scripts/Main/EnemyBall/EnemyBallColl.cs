@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Brick;
 using UnityEngine;
+using Brick;
+using Scoring;
 
 public class EnemyBallColl : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class EnemyBallColl : MonoBehaviour
 
     [HideInInspector]
     public bool relay;
+
+    public GameObject prefabParBall;
 
     void Awake()
     {
@@ -35,6 +38,9 @@ public class EnemyBallColl : MonoBehaviour
                 break;
             case "ReverseBrick":
                 TypeReverse(ray, dis);
+                break;
+            case "CoreBrick":
+                TypeCore(ray, dis);
                 break;
         }
         
@@ -66,7 +72,21 @@ public class EnemyBallColl : MonoBehaviour
         trail.SetPosition(trail.positionCount - 1, rb.position);
         ball.DetLastRay();
     }
-    
+
+    public void TypeDefault(RaycastHit2D ray, float dis)
+    {
+        rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
+        rb.position = ray.point + ray.normal * .25f;
+        ball.lastPos = ray.point + ray.normal * .01f;
+        Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
+
+        if (relay) { ball.DetBarLose(); return; }
+
+        relay = true;
+        trail.SetPosition(trail.positionCount - 1, rb.position);
+        ball.DetLastRay();
+    }
+
     private void TypeReverse(RaycastHit2D ray, float dis)
     {
         rb.velocity = -rb.velocity;
@@ -80,22 +100,20 @@ public class EnemyBallColl : MonoBehaviour
         trail.SetPosition(trail.positionCount - 1, rb.position);
         ball.DetLastRay();
     }
-
-
-    public void TypeDefault(RaycastHit2D ray, float dis)
+    
+    public void TypeCore(RaycastHit2D ray, float dis)
     {
-        rb.velocity = Vector2.Reflect(rb.velocity, ray.normal);
-        rb.position = ray.point + ray.normal * .25f;
-        ball.lastPos = ray.point + ray.normal * .01f;
-        Debug.DrawRay(ray.point, rb.position - ray.point, Color.blue);
-        // commented out to not spam the log, feel free to uncomment if you need to debug
-        //Debug.Log(ray.collider);
+        ParBallHandler prefab = Instantiate(prefabParBall, transform).GetComponent<ParBallHandler>();
+        prefab.transform.parent = null;
 
-        if (relay) { ball.DetBarLose(); return; }
+        trail.transform.parent = prefab.transform;
+        trail.transform.localPosition = Vector2.zero;
 
-        relay = true;
-        trail.SetPosition(trail.positionCount - 1, rb.position);
-        ball.DetLastRay();
+        prefab.StartVel(rb.velocity, ball);
+
+        ball.StartCoroutine(ball.WaitRespawn());
+
+        ScoreManager.Instance?.AddScore(10);
     }
 
     #endregion

@@ -52,8 +52,6 @@ public class EnemyBarContr : MonoBehaviour
 
         danger = dis/ball.ballSp;
         landPosX = pos.x;
-
-        Physics2D.queriesHitTriggers = true;
     }
 
     public void CollBarHit()

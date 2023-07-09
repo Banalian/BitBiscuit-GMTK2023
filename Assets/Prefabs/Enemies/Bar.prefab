@@ -180,7 +180,7 @@ MonoBehaviour:
   height: -4
   TotalHits: 0
   incoming: 0
-  boundaryX: 3.65
+  boundaryX: 4.38
 --- !u!114 &8012371947760318304
 MonoBehaviour:
   m_ObjectHideFlags: 0

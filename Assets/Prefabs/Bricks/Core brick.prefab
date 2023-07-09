@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6148010758706599087}
   m_Layer: 7
   m_Name: Core brick
-  m_TagString: DefaultBounce
+  m_TagString: CoreBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,10 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc7073baf484a4e8945a47b6ce8177d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ScoreCost>k__BackingField: 1
   <ScoreDestroyValue>k__BackingField: 50
   <ScoreHitValue>k__BackingField: 0
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
+  BaseUpgradeCost: 5
+  description: Default description
 --- !u!114 &5476864337880025960
 MonoBehaviour:
   m_ObjectHideFlags: 0

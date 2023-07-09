@@ -12,12 +12,18 @@ public class EnemyBallContr : MonoBehaviour
 
     public float ballSp;
     public float ballMinHeight;
+
+    public float respawnTime;
+
     [HideInInspector]
     public Vector2 lastPos;
 
     RaycastHit2D rayBall;
     RaycastHit2D rayPer;
     float rayDis;
+
+    LayerMask rayMask;
+    LayerMask loseMask;
 
     void Awake()
     {
@@ -28,6 +34,9 @@ public class EnemyBallContr : MonoBehaviour
 
         lastPos = rb.position;
         rb.velocity = new Vector2(Random.Range(0.2f, 1) * Mathf.Sign(Random.Range(-1, 1)), -1);
+
+        rayMask = ~(1 << LayerMask.NameToLayer("BricksEmpty"));
+        loseMask = ~(1 << LayerMask.NameToLayer("Enemy") | 1 << LayerMask.NameToLayer("BricksEmpty"));
     }
 
     void FixedUpdate()
@@ -45,11 +54,11 @@ public class EnemyBallContr : MonoBehaviour
         rayDis = Mathf.Clamp(ballSp * Time.fixedDeltaTime, .25f, 100);
         Vector2 nextPos = rb.velocity.normalized;
 
-        rayBall = Physics2D.Raycast(rb.position, nextPos, rayDis);
+        rayBall = Physics2D.Raycast(rb.position, nextPos, rayDis, rayMask);
         Debug.DrawRay(rb.position, nextPos * rayDis, Color.red);
 
         Vector2 perPos = Mathf.Sign(rb.velocity.x) * Mathf.Sign(rb.velocity.y) * -Vector2.Perpendicular(nextPos);
-        rayPer = Physics2D.Raycast(rb.position, perPos, .25f);
+        rayPer = Physics2D.Raycast(rb.position, perPos, .25f, rayMask);
         Debug.DrawRay(rb.position, perPos*.25f, Color.black);
 
         if (rayBall) coll.CollHandle(rayBall, rayDis); else 
@@ -67,7 +76,7 @@ public class EnemyBallContr : MonoBehaviour
     {
         Vector2 nextPos = rb.velocity.normalized;
 
-        rayBall = Physics2D.Raycast(rb.position, nextPos, rayDis);
+        rayBall = Physics2D.Raycast(rb.position, nextPos, rayDis, rayMask);
         Debug.DrawRay(rb.position, nextPos * rayDis, Color.green);
 
         if (rayBall) coll.CollHandle(rayBall, rayDis); else { coll.relay = false; DetBarLose(); }
@@ -76,15 +85,13 @@ public class EnemyBallContr : MonoBehaviour
     [ContextMenu("TestBarLose")]
     public void DetBarLose()
     {
+        Debug.Log(rb.velocity.y);
         if (rb.velocity.y >= 0) return;
 
-        Physics2D.queriesHitTriggers = false;
-
-        LayerMask mask = ~LayerMask.GetMask("Enemy");
         Vector2 velNorm = rb.velocity.normalized;
 
         float rayDis = (rb.position.y+3.75f)/-velNorm.y;
-        RaycastHit2D rayFirst = Physics2D.Raycast(rb.position, velNorm, rayDis, mask);
+        RaycastHit2D rayFirst = Physics2D.Raycast(rb.position, velNorm, rayDis, loseMask);
         Debug.DrawRay(rb.position, velNorm * rayDis, Color.white);
 
         if (!rayFirst) { bar.LandPosCalc(rb.position+velNorm*rayDis, rayFirst.distance); return; }
@@ -92,7 +99,7 @@ public class EnemyBallContr : MonoBehaviour
         Vector2 raySecOff = rayFirst.point + rayFirst.normal * .25f;
         Vector2 raySecPer = Vector2.Reflect(velNorm, rayFirst.normal);
         float raySecDis = (raySecOff.y + 3.75f) / -velNorm.y;
-        RaycastHit2D raySecond = Physics2D.Raycast(raySecOff, raySecPer, raySecDis, mask);
+        RaycastHit2D raySecond = Physics2D.Raycast(raySecOff, raySecPer, raySecDis, loseMask);
         Debug.DrawRay(raySecOff, raySecPer * raySecDis, Color.yellow);
 
         if (!raySecond) { bar.LandPosCalc(raySecOff+raySecPer*raySecDis, rayFirst.distance+raySecond.distance); return; }
@@ -100,12 +107,10 @@ public class EnemyBallContr : MonoBehaviour
         Vector2 rayLastOff = raySecond.point + raySecond.normal * .25f;
         Vector2 rayLastPer = Vector2.Reflect(raySecPer, raySecond.normal);
         float rayLastDis = (rayLastOff.y + 3.75f) / -velNorm.y;
-        RaycastHit2D rayLast = Physics2D.Raycast(rayLastOff, rayLastPer, rayLastDis, mask);
+        RaycastHit2D rayLast = Physics2D.Raycast(rayLastOff, rayLastPer, rayLastDis, loseMask);
         Debug.DrawRay(rayLastOff, rayLastPer * rayLastDis, Color.red);
 
         if (!rayLast) { bar.LandPosCalc(rayLastOff+rayLastPer*rayLastDis, rayFirst.distance+raySecond.distance+rayLast.distance); return; }
-
-        Physics2D.queriesHitTriggers = true;
     }
 
     void DetHeight()
@@ -113,10 +118,12 @@ public class EnemyBallContr : MonoBehaviour
         if (rb.position.y < ballMinHeight)
         {
             StartCoroutine(WaitRespawn());
+
+            ScoreManager.Instance?.AddScore(15);
         }
     }
 
-    IEnumerator WaitRespawn()
+    public IEnumerator WaitRespawn()
     {
         rb.position = new Vector2(0, 100);
         transform.position = rb.position;
@@ -126,12 +133,18 @@ public class EnemyBallContr : MonoBehaviour
 
         bar.incoming = false;
 
-        yield return new WaitUntil(() => Mathf.Round(bar.transform.position.x) == 0);
+        float timer = respawnTime;
+        while (Mathf.Round(bar.transform.position.x*10)/10 != 0 || timer > 0)
+        {
+            timer -= Time.deltaTime;
 
-        rb.position = new Vector2(0, -3);
+            yield return null;
+        }
+
+        rb.position = new Vector2(0, -3.25f);
         transform.position = rb.position;
         lastPos = rb.position;
-        rb.velocity = new Vector2(Random.Range(0.2f, 1) * Mathf.Sign(Random.Range(-1, 1)), -1);
+        rb.velocity = new Vector2(Random.Range(1, 1) * Mathf.Sign(Random.Range(-1, 1)), -1);
         trail.Clear();
     }
 }

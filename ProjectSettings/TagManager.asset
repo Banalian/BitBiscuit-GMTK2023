@@ -9,6 +9,7 @@ TagManager:
   - DefaultBounce
   - ReverseBrick
   - Brick
+  - CoreBrick
   layers:
   - Default
   - TransparentFX
