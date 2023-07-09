@@ -13,6 +13,7 @@ public class EnemyBallContr : MonoBehaviour
     public float ballSp;
     public float ballMinHeight;
 
+    public float startTime;
     public float respawnTime;
 
     [HideInInspector]
@@ -37,6 +38,11 @@ public class EnemyBallContr : MonoBehaviour
 
         rayMask = ~(1 << LayerMask.NameToLayer("BricksEmpty"));
         loseMask = ~(1 << LayerMask.NameToLayer("Enemy") | 1 << LayerMask.NameToLayer("BricksEmpty"));
+
+        float resp = respawnTime;
+        respawnTime = startTime;
+        StartCoroutine(WaitRespawn());
+        respawnTime = resp;
     }
 
     void FixedUpdate()
