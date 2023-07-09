@@ -50,7 +50,7 @@ namespace UI
             Time.timeScale = 0;
             Destroy(ElementManager.Instance.gameObject);
             AudioManager.Instance.Play(SoundBank.GameOver);
-            scoreText.SetText("Final Score : " + ScoreManager.Instance.GetRemainingScore() + "p");
+            scoreText.SetText("Final Score : " + ScoreManager.Instance.TotalPoints + "p");
         }
         
         public void Restart()
