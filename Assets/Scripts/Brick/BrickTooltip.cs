@@ -37,6 +37,11 @@ namespace Brick
             TooltipScreenSpaceUI.Instance.HideTooltip();
         }
 
+        private void OnDisable()
+        {
+            TooltipScreenSpaceUI.Instance.HideTooltip();
+        }
+
         /// <summary>
         /// Using info from the brick, generates the text to display in the tooltip
         /// </summary>
@@ -56,7 +61,7 @@ namespace Brick
             {
                 case BallTrajModifierBrick ballTrajBrick:
                     //add cooldown if it's a boombox
-                    if (ballTrajBrick.force > 0)
+                    if (ballTrajBrick.force < 0)
                     {
                         text.Add("Cooldown: " + ballTrajBrick.Cooldown + "s");
                     }

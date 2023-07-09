@@ -75,24 +75,12 @@ namespace UI
         
         public void HideTooltip()
         {
-            gameObject.SetActive(false);
+            if (gameObject)
+            {
+                gameObject.SetActive(false);
+            }
             getTooltipTextFunc = null;
             _active = false;
-        }
-        
-        public static void ShowTooltip_Static(string tooltipText)
-        {
-            Instance.ShowTooltip(tooltipText);
-        }
-        
-        public static void ShowTooltip_Static(Func<string> getTooltipTextFunc)
-        {
-            Instance.ShowTooltip(getTooltipTextFunc);
-        }
-        
-        public static void HideTooltip_Static()
-        {
-            Instance.HideTooltip();
         }
     }
 }
