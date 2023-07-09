@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using Scoring;
 
@@ -15,6 +16,8 @@ public class EnemyBallContr : MonoBehaviour
 
     public float startTime;
     public float respawnTime;
+
+    public int scoreToGiveWhenOOB = 15;
 
     [HideInInspector]
     public Vector2 lastPos;
@@ -123,9 +126,10 @@ public class EnemyBallContr : MonoBehaviour
     {
         if (rb.position.y < ballMinHeight)
         {
+            AudioManager.Instance.Play(SoundBank.Explosion);
             StartCoroutine(WaitRespawn());
 
-            ScoreManager.Instance?.AddScore(15);
+            ScoreManager.Instance?.AddScore(scoreToGiveWhenOOB);
         }
     }
 
