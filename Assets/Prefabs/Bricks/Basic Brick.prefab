@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4367813853213716574}
   - component: {fileID: 7535461447254435160}
   - component: {fileID: 899198987285078426}
+  - component: {fileID: 6954801755969716270}
   m_Layer: 7
   m_Name: Basic Brick
   m_TagString: DefaultBounce
@@ -53,6 +54,7 @@ MonoBehaviour:
   <ScoreHitValue>k__BackingField: 1
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 6
+  BaseUpgradeCost: 5
 --- !u!114 &3529487355440821942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +136,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7af389449a6e346ab558ca764e0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6954801755969716270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418194497571715743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb51399cb4474c838af093f9c981072c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2702260493817395015

@@ -30,8 +30,8 @@ namespace Brick
         /// <summary>
         /// Cooldown of the modifier
         /// </summary>
-        [SerializeField] 
-        protected float cooldown = 2;
+        [field:SerializeField] 
+        public float Cooldown { get; protected set; } = 2;
 
         /// <summary>
         /// Sound to play when the brick is activated
@@ -91,7 +91,7 @@ namespace Brick
             }
             yield return new WaitForSeconds(duration);
             Deactivate();
-            yield return new WaitForSeconds(cooldown);
+            yield return new WaitForSeconds(Cooldown);
             IsInCooldown = false;
         }
 
@@ -121,10 +121,10 @@ namespace Brick
 
         public void ReduceCooldown(float reduction = 1f)
         {
-            cooldown -= reduction;
-            if (cooldown <= 0f)
+            Cooldown -= reduction;
+            if (Cooldown <= 0f)
             {
-                cooldown = 0.5f;
+                Cooldown = 0.5f;
             }
         }
         

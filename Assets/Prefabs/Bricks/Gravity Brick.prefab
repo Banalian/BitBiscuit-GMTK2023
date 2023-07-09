@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 8953295779694297200}
   - component: {fileID: 98760020529489556}
   - component: {fileID: 7345062659938494908}
+  - component: {fileID: 5061716316372651774}
   m_Layer: 7
   m_Name: Gravity Brick
   m_TagString: DefaultBounce
@@ -136,10 +137,11 @@ MonoBehaviour:
   <ScoreHitValue>k__BackingField: 1
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
+  BaseUpgradeCost: 5
   <Range>k__BackingField: 2
   force: 0.2
   duration: -1
-  cooldown: 0
+  <Cooldown>k__BackingField: 2
   activationSound: 0
   ActivateWhenPlayerIsClose: 0
 --- !u!114 &8953295779694297200
@@ -211,5 +213,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7af389449a6e346ab558ca764e0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5061716316372651774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049515572627373457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb51399cb4474c838af093f9c981072c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

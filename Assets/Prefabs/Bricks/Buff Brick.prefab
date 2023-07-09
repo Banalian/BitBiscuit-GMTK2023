@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2347102122410185443}
   - component: {fileID: 1216166592240905674}
   - component: {fileID: 2683983025364987017}
+  - component: {fileID: 8815673542313555041}
   m_Layer: 7
   m_Name: Buff Brick
   m_TagString: DefaultBounce
@@ -52,6 +53,7 @@ MonoBehaviour:
   <ScoreHitValue>k__BackingField: 1
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
+  BaseUpgradeCost: 5
   <Radius>k__BackingField: 2
 --- !u!114 &2347102122410185443
 MonoBehaviour:
@@ -122,6 +124,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7af389449a6e346ab558ca764e0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8815673542313555041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3436410235724167280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb51399cb4474c838af093f9c981072c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8021551085866514480

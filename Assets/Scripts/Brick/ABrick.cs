@@ -58,6 +58,12 @@ namespace Brick
         [field:SerializeField] 
         public int MaximumLevel { get; protected set; } = 1;
         
+        /// <summary>
+        /// Base upgrade cost
+        /// </summary>
+        [SerializeField]
+        protected int BaseUpgradeCost = 5;
+        
 
         protected virtual void Start()
         {
@@ -169,6 +175,15 @@ namespace Brick
             OnBrickLevelChanged?.Invoke(gameObject, CurrentLevel);
 
             return true;
+        }
+
+        /// <summary>
+        /// Function to get the upgrade cost of the brick. Please override this function if you want to change the cost.
+        /// </summary>
+        /// <returns>the cost in point to upgrade the brick</returns>
+        public virtual int GetUpgradeCost()
+        {
+            return (int)Math.Round(BaseUpgradeCost * 2.3f);
         }
     }
 }

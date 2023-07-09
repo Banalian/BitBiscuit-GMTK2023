@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5756428671141852174}
   - component: {fileID: 7003215050670678952}
   - component: {fileID: 2933568536989620164}
+  - component: {fileID: 1591496498816608488}
   m_Layer: 7
   m_Name: Shockwave Brick
   m_TagString: DefaultBounce
@@ -53,10 +54,11 @@ MonoBehaviour:
   <ScoreHitValue>k__BackingField: 1
   <CurrentLevel>k__BackingField: 1
   <MaximumLevel>k__BackingField: 1
+  BaseUpgradeCost: 5
   <Range>k__BackingField: 2
   force: -1
   duration: 1
-  cooldown: 4
+  <Cooldown>k__BackingField: 2
   activationSound: 1
   ActivateWhenPlayerIsClose: 1
 --- !u!114 &7145353612386013757
@@ -140,6 +142,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7af389449a6e346ab558ca764e0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1591496498816608488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2446267290132466678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb51399cb4474c838af093f9c981072c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3727543407050127308
