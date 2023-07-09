@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Audio;
 
 public class ParBallHandler : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class ParBallHandler : MonoBehaviour
             child.localPosition = Vector2.zero;
             spr.color = Color.white;
 
+            AudioManager.Instance.Play(SoundBank.Explosion);
+
             transform.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(rb.velocity, Vector2.up));
             par.Play();
 
@@ -40,5 +43,6 @@ public class ParBallHandler : MonoBehaviour
         rb.velocity = vel;
         ball = ballPre;
         spr = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        spr.color = Color.white;
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Audio;
 using UnityEngine;
 using Scoring;
 
@@ -126,7 +125,6 @@ public class EnemyBallContr : MonoBehaviour
     {
         if (rb.position.y < ballMinHeight)
         {
-            AudioManager.Instance.Play(SoundBank.Explosion);
             StartCoroutine(WaitRespawn());
 
             ScoreManager.Instance?.AddScore(scoreToGiveWhenOOB);
