@@ -34,6 +34,7 @@ namespace UI
         {
             if (Input.GetMouseButtonDown(1))
             {
+                ElementManager.Instance.SetActionType(ElementManager.ActionType.Replace);
                 ElementManager.Instance.SetSelectedElement(defaultBrick);
                 _lastBrick = null;
             }

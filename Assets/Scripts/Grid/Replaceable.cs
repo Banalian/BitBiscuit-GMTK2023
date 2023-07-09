@@ -6,7 +6,7 @@ namespace Grid
     {
         private void OnMouseUpAsButton()
         {
-            ElementManager.Instance.ReplaceElement(this.gameObject);
+            ElementManager.Instance.ElementClicked(this.gameObject);
         }
     }
 }

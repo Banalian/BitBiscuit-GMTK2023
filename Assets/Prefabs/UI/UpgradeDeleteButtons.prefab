@@ -253,7 +253,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 183704769232566722}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1358753310557288346}
+        m_TargetAssemblyTypeName: UpgradeBtnHandler, Assembly-CSharp
+        m_MethodName: SelectUpgradeMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6776512966274753716
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +277,7 @@ GameObject:
   - component: {fileID: 4611362991624736553}
   - component: {fileID: 1490792648588753079}
   - component: {fileID: 4617704176578983474}
+  - component: {fileID: 1358753310557288346}
   m_Layer: 5
   m_Name: UpgradeDeleteButtons
   m_TagString: Untagged
@@ -330,5 +343,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 955298372232e9844948f4732c3aa9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1358753310557288346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776512966274753716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68959edc9b45517469dc8f16feb98d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

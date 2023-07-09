@@ -7,6 +7,7 @@ public class DeleteBtnHandler : MonoBehaviour
 {
     public void ResetSelectedElement()
     {
+        ElementManager.Instance.SetActionType(ElementManager.ActionType.Replace);
         ElementManager.Instance.ResetSelected();
     }
 }

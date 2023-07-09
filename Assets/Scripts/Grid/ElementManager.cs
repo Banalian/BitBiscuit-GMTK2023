@@ -1,10 +1,8 @@
 using System;
-using Audio;
-using Brick;
-using Scoring;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+
 
 namespace Grid
 {
@@ -21,6 +19,14 @@ namespace Grid
     
         public static ElementManager Instance;
 
+
+        public enum ActionType
+        {
+            Replace,
+            Upgrade
+        }
+        private ActionType _currentActionType;
+
         private void Awake() 
         { 
             //If there is another ElementManager instance, and it's not me, delete myself.
@@ -36,6 +42,12 @@ namespace Grid
 
             selectedElement = defaultElement;
             InitHighlight();
+            _currentActionType= ActionType.Replace;
+        }
+
+        public void SetActionType(ActionType newType)
+        {
+            this._currentActionType = newType;
         }
         
         private void InitHighlight()
@@ -70,6 +82,7 @@ namespace Grid
         /// </summary>
         public void SetSelectedElement(GameObject newSelection)
         {
+            this.SetActionType(ElementManager.ActionType.Replace);
             this.selectedElement = newSelection;
             UpdateHighlight();
         }
@@ -86,19 +99,29 @@ namespace Grid
         {
             if (selectedElement != null)
             {
-                if (selectedElement != defaultElement)
+                if (objToReplace.gameObject.GetComponent<ABrick>())
                 {
-                    // Check the element's price
-                    var price = selectedElement.GetComponent<ABrick>().ScoreCost;
-                    if (ScoreManager.Instance.Score < price)
+                    if (selectedElement == defaultElement)
                     {
-                        AudioManager.Instance.Play(SoundBank.MenuError);
-                        return;
+                        GameObject placedElement = ReplaceElementWith(objToReplace, selectedElement);
                     }
+                    else
+                    {
+                        // Check the element's price
+                        var price = selectedElement.GetComponent<ABrick>().ScoreCost;
+                        if (ScoreManager.Instance.Score < price)
+                        {
+                            AudioManager.Instance.Play(SoundBank.MenuError);
+                            return;
+                        }
                     
-                    AudioManager.Instance.Play(SoundBank.ShopBuy);
+                        AudioManager.Instance.Play(SoundBank.ShopBuy);
+                    }  
                 }
-                GameObject placedElement = ReplaceElementWith(objToReplace, selectedElement);
+                else
+                {    
+                    GameObject placedElement = ReplaceElementWith(objToReplace, selectedElement);
+                }
             }
         }
 
@@ -123,6 +146,28 @@ namespace Grid
         public void UnHighLight()
         {
             _highlightGO.SetActive(false);
+        }
+        
+        public void UpgradeElement(GameObject elemGO)
+        {
+            var brick = elemGO.GetComponent<ABrick>();
+            if (brick.CanLevelUp())
+            {
+                brick.LevelUp();
+            }
+        }
+
+        public void ElementClicked(GameObject elementGO)
+        {
+            switch (this._currentActionType)
+            {
+                case ActionType.Replace:
+                    ReplaceElement(elementGO);
+                    break;
+                case ActionType.Upgrade:
+                    UpgradeElement(elementGO);
+                    break;
+            }
         }
     }
 }
